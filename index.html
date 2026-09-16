@@ -462,15 +462,15 @@
   <header class="hero">
     <div class="container hero-content">
       
-      <!-- Sello Circular Oficial con imagen real de la máscara -->
+      <!-- Sello Circular con Orientación Polar Correcta de la Máscara -->
       <div class="hero-stamp-wrapper">
-        <svg class="stamp-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg class="stamp-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <path id="pathTop" d="M 44,160 A 116,116 0 0,1 276,160" fill="none"/>
             <path id="pathBottom" d="M 32,160 A 128,128 0 0,0 288,160" fill="none"/>
           </defs>
 
-          <!-- Aros concéntricos en Oat Cream -->
+          <!-- Anillos concéntricos -->
           <circle cx="160" cy="160" r="154" fill="none" stroke="#F4EBD9" stroke-width="3.5"/>
           <circle cx="160" cy="160" r="147" fill="none" stroke="#F4EBD9" stroke-width="1.2"/>
 
@@ -479,10 +479,38 @@
             <textPath href="#pathTop" startOffset="50%" text-anchor="middle">ZERO DRAMA</textPath>
           </text>
 
-          <!-- Imagen oficial de la máscara con inversión a Oat Cream (#F4EBD9) -->
-          <image href="mascara 1.png" xlink:href="mascara 1.png" x="88" y="95" width="144" height="150" style="filter: brightness(0) invert(95%) sepia(10%) saturate(500%) hue-rotate(330deg);" />
+          <!-- Máscara Bimodal con Lado Izquierdo Oscuro y Derecho Claro -->
+          <g transform="translate(160, 162)">
+            <!-- MITAD IZQUIERDA (DRAMA): Fondo oscuro (#1A1817) con rasgos en crema (#F4EBD9) -->
+            <!-- Base izquierda recortada con contorno crema -->
+            <path d="M 0,-68 C -36,-68 -64,-34 -64,14 C -64,52 -38,76 0,84 Z" fill="#1A1817" stroke="#F4EBD9" stroke-width="3" stroke-linejoin="round" />
+            <!-- Ceja triste -->
+            <path d="M -42,-28 Q -28,-38 -14,-28" stroke="#F4EBD9" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <!-- Ojo almendrado caído -->
+            <path d="M -38,-14 Q -26,-6 -14,-14 Q -26,-22 -38,-14 Z" fill="#F4EBD9" />
+            <!-- Lágrima -->
+            <path d="M -26,-2 C -31,6 -35,14 -26,19 C -17,14 -21,6 -26,-2 Z" fill="#F4EBD9" />
+            <!-- Boca triste y comisura -->
+            <path d="M -42,42 Q -26,30 0,36" stroke="#F4EBD9" stroke-width="5" fill="none" stroke-linecap="round" />
+            <path d="M -43,37 Q -46,43 -39,46" stroke="#F4EBD9" stroke-width="3" fill="none" stroke-linecap="round" />
 
-          <!-- Subtexto inferior en Montserrat -->
+            <!-- MITAD DERECHA (ALIVIO): Fondo crema (#F4EBD9) con rasgos en oscuro (#1A1817) -->
+            <!-- Base derecha rellena de crema -->
+            <path d="M 0,-68 C 36,-68 64,-34 64,14 C 64,52 38,76 0,84 Z" fill="#F4EBD9" />
+            <!-- Ceja derecha sonriente -->
+            <path d="M 14,-28 Q 28,-38 42,-28" stroke="#1A1817" stroke-width="3.5" fill="none" stroke-linecap="round" />
+            <!-- Ojo sonriente cerrado -->
+            <path d="M 14,-14 Q 28,-26 40,-14" stroke="#1A1817" stroke-width="4.5" fill="none" stroke-linecap="round" />
+            <!-- Media sonrisa pícara y pómulo -->
+            <path d="M 0,36 Q 24,42 42,16" stroke="#1A1817" stroke-width="5" fill="none" stroke-linecap="round" />
+            <path d="M 39,12 Q 46,18 42,25" stroke="#1A1817" stroke-width="3" fill="none" stroke-linecap="round" />
+
+            <!-- Eje divisor central y puente nasal -->
+            <line x1="0" y1="-68" x2="0" y2="84" stroke="#F4EBD9" stroke-width="3.5" />
+            <path d="M -6,4 Q 0,8 6,4" stroke="#F4EBD9" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          </g>
+
+          <!-- Descriptor inferior en Montserrat -->
           <text font-family="'Montserrat', sans-serif" font-size="12px" font-weight="700" letter-spacing="2.8px" fill="#F4EBD9">
             <textPath href="#pathBottom" startOffset="50%" text-anchor="middle">• GLUTEN &amp; LACTOSE FREE •</textPath>
           </text>
