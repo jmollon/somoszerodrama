@@ -93,16 +93,19 @@
       text-transform: uppercase;
       letter-spacing: 0.15em;
       background-color: var(--zd-terracotta);
-      color: var(--zd-oat-cream);
+      color: var(--zd-oat-cream) !important; /* Blindado para evitar desaparición de texto */
       border: none;
       border-radius: var(--zd-radius-md);
       cursor: pointer;
       transition: opacity var(--zd-transition), transform var(--zd-transition);
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
       opacity: 0.92;
       transform: translateY(-2px);
+      color: var(--zd-oat-cream) !important; /* Mantiene la visibilidad */
     }
 
     .badge-allergen {
@@ -131,6 +134,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1.5rem;
     }
 
     .nav-logo {
@@ -140,9 +144,15 @@
       color: var(--zd-oat-cream);
     }
 
+    .nav-right-cluster {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 1.8rem;
       align-items: center;
       font-family: var(--zd-font-sub);
       font-size: 0.75rem;
@@ -151,8 +161,42 @@
       text-transform: uppercase;
     }
 
-    .nav-links a:hover {
+    .nav-links a:not(.btn-primary):hover {
       color: var(--zd-terracotta);
+    }
+
+    /* Selector de Idioma */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(244, 235, 217, 0.05);
+      border: 1px solid rgba(244, 235, 217, 0.2);
+      border-radius: var(--zd-radius-sm);
+      padding: 2px 6px;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--zd-warm-slate);
+      font-family: var(--zd-font-sub);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      padding: 4px 6px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: color var(--zd-transition), background var(--zd-transition);
+    }
+
+    .lang-btn:hover {
+      color: var(--zd-oat-cream);
+    }
+
+    .lang-btn.active {
+      color: var(--zd-espresso);
+      background-color: var(--zd-oat-cream);
     }
 
     /* Hero Section */
@@ -187,8 +231,8 @@
 
     /* Sello SVG Oficial */
     .stamp-svg {
-      width: 220px;
-      height: 220px;
+      width: 230px;
+      height: 230px;
       display: block;
       margin: 0 auto;
     }
@@ -225,7 +269,7 @@
       font-size: 0.95rem;
     }
 
-    /* Platos Estrella (Cards Oat Cream) */
+    /* Platos Estrella */
     .menu-section {
       padding: 5rem 0;
     }
@@ -407,11 +451,20 @@
   <nav class="navbar">
     <div class="container nav-inner">
       <a href="#" class="nav-logo">ZERO DRAMA</a>
-      <div class="nav-links">
-        <a href="#garantia">Garantía</a>
-        <a href="#carta">Carta</a>
-        <a href="#aval">Homologación</a>
-        <a href="#contacto" class="btn-primary" style="padding: 0.5rem 1.2rem;">Contratación</a>
+      
+      <div class="nav-right-cluster">
+        <div class="lang-switcher" aria-label="Selector de idioma">
+          <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+          <button class="lang-btn" onclick="setLanguage('cat')">CAT</button>
+          <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <div class="nav-links">
+          <a href="#garantia" data-i18n="nav-guarantee">Garantía</a>
+          <a href="#carta" data-i18n="nav-menu">Carta</a>
+          <a href="#aval" data-i18n="nav-certification">Homologación</a>
+          <a href="#contacto" class="btn-primary" style="padding: 0.5rem 1.2rem;" data-i18n="nav-contact-btn">Contratación</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -432,31 +485,39 @@
           <text font-family="'Prata', Georgia, serif" font-size="22px" letter-spacing="3.5px" fill="#F4EBD9">
             <textPath href="#topArch" startOffset="50%" text-anchor="middle">ZERO DRAMA</textPath>
           </text>
-          <!-- Máscara Bimodal con entrecejo centrado -->
-          <g transform="translate(160,158) scale(0.68)">
-            <!-- Mitad izquierda negra (drama) -->
-            <path d="M 0,-85 C -45,-85 -75,-40 -75,20 C -75,65 -45,95 0,105 Z" fill="#F4EBD9" />
-            <path d="M -50,-35 Q -30,-50 -15,-35" stroke="#1A1817" stroke-width="4" fill="none" stroke-linecap="round" />
-            <path d="M -45,-15 Q -30,-5 -15,-15" fill="#1A1817" />
-            <path d="M -30,-2 C -36,8 -42,16 -30,22 C -20,16 -24,8 -30,-2 Z" fill="#1A1817" />
-            <path d="M -50,45 Q -30,30 0,38" stroke="#1A1817" stroke-width="6" fill="none" stroke-linecap="round" />
-            <!-- Mitad derecha clara (alivio) -->
-            <path d="M 0,-85 C 45,-85 75,-40 75,20 C 75,65 45,95 0,105 Z" fill="none" stroke="#F4EBD9" stroke-width="6" />
-            <path d="M 15,-35 Q 35,-50 50,-35" stroke="#F4EBD9" stroke-width="4" fill="none" stroke-linecap="round" />
-            <path d="M 18,-15 Q 32,-30 48,-15 Z" fill="#F4EBD9" />
-            <path d="M 0,38 Q 30,45 50,15" stroke="#F4EBD9" stroke-width="6" fill="none" stroke-linecap="round" />
-            <line x1="0" y1="-85" x2="0" y2="105" stroke="#F4EBD9" stroke-width="4" />
+          
+          <!-- Máscara: Carga externa con fallback vectorial automático -->
+          <g id="mask-container">
+            <image href="mascara.png" xlink:href="mascara.png" x="88" y="95" width="144" height="150" 
+                   preserveAspectRatio="xMidYMid meet"
+                   onerror="if(!this.dataset.retry){this.dataset.retry=1; this.setAttribute('href','mascara 1.png'); this.setAttribute('xlink:href','mascara 1.png');} else { document.getElementById('vector-fallback').style.display='block'; this.style.display='none'; }"/>
+            
+            <g id="vector-fallback" transform="translate(160,165) scale(0.68)" style="display: none;">
+              <!-- Mitad izquierda oscura (drama) -->
+              <path d="M 0,-85 C -45,-85 -75,-40 -75,20 C -75,65 -45,95 0,105 Z" fill="#F4EBD9" />
+              <path d="M -50,-35 Q -30,-50 -15,-35" stroke="#1A1817" stroke-width="4" fill="none" stroke-linecap="round" />
+              <path d="M -45,-15 Q -30,-5 -15,-15" fill="#1A1817" />
+              <path d="M -30,-2 C -36,8 -42,16 -30,22 C -20,16 -24,8 -30,-2 Z" fill="#1A1817" />
+              <path d="M -50,45 Q -30,30 0,38" stroke="#1A1817" stroke-width="6" fill="none" stroke-linecap="round" />
+              <!-- Mitad derecha clara (alivio) -->
+              <path d="M 0,-85 C 45,-85 75,-40 75,20 C 75,65 45,95 0,105 Z" fill="none" stroke="#F4EBD9" stroke-width="6" />
+              <path d="M 15,-35 Q 35,-50 50,-35" stroke="#F4EBD9" stroke-width="4" fill="none" stroke-linecap="round" />
+              <path d="M 18,-15 Q 32,-30 48,-15 Z" fill="#F4EBD9" />
+              <path d="M 0,38 Q 30,45 50,15" stroke="#F4EBD9" stroke-width="6" fill="none" stroke-linecap="round" />
+              <line x1="0" y1="-85" x2="0" y2="105" stroke="#F4EBD9" stroke-width="4" />
+            </g>
           </g>
+
           <text font-family="'Montserrat', sans-serif" font-size="12px" font-weight="700" letter-spacing="2.8px" fill="#F4EBD9">
             <textPath href="#botArch" startOffset="50%" text-anchor="middle">• GLUTEN &amp; LACTOSE FREE •</textPath>
           </text>
         </svg>
       </div>
 
-      <span class="badge-allergen">Instalación 100% Exclusiva</span>
-      <h1 style="margin-top: 1rem;">Comer en la calle sin miedo ni dramas</h1>
-      <p>Gastronomía callejera de alto nivel técnico. Cocina melosa a baja temperatura, masas ancestrales y un protocolo estricto sin contaminación cruzada ni trazas.</p>
-      <a href="#contacto" class="btn-primary">Contratar para eventos</a>
+      <span class="badge-allergen" data-i18n="hero-badge">Instalación 100% Exclusiva</span>
+      <h1 style="margin-top: 1rem;" data-i18n="hero-title">Comer en la calle sin miedo ni dramas</h1>
+      <p data-i18n="hero-subtitle">Gastronomía callejera de alto nivel técnico. Cocina melosa a baja temperatura, masas ancestrales y un protocolo estricto sin contaminación cruzada ni trazas.</p>
+      <a href="#contacto" class="btn-primary" data-i18n="hero-cta">Contratar para eventos</a>
     </div>
   </header>
 
@@ -465,19 +526,19 @@
     <div class="container">
       <div class="pillars-grid">
         <div class="pillar-card">
-          <span class="descriptor">Seguridad Clínica</span>
-          <h3>Cero Contaminación Cruzada</h3>
-          <p>Operamos como unidad dedicada exclusivamente libre de gluten y lácteos. Ni en el obrador central ni en el camión entra jamás harina de trigo o leche convencional.</p>
+          <span class="descriptor" data-i18n="p1-desc">Seguridad Clínica</span>
+          <h3 data-i18n="p1-title">Cero Contaminación Cruzada</h3>
+          <p data-i18n="p1-text">Operamos como unidad dedicada exclusivamente libre de gluten y lácteos. Ni en el obrador central ni en el camión entra jamás harina de trigo o leche convencional.</p>
         </div>
         <div class="pillar-card">
-          <span class="descriptor">Técnica Culinaria</span>
-          <h3>Cocción Lenta Sous-Vide</h3>
-          <p>Carnes cocinadas al vacío a temperatura milimétrica durante 12 a 18 horas. Máxima melosidad y pasteurización certificada de lote a lote sin depender de fritos pesados.</p>
+          <span class="descriptor" data-i18n="p2-desc">Técnica Culinaria</span>
+          <h3 data-i18n="p2-title">Cocción Lenta Sous-Vide</h3>
+          <p data-i18n="p2-text">Carnes cocinadas al vacío a temperatura milimétrica durante 12 a 18 horas. Máxima melosidad y pasteurización certificada de lote a lote sin depender de fritos pesados.</p>
         </div>
         <div class="pillar-card">
-          <span class="descriptor">Operativa de Eventos</span>
-          <h3>Servicio Ultrarrápido</h3>
-          <p>Flujo optimizado para grandes aglomeraciones: pase de plato en 45-60 segundos por cliente. Sin humos densos de fritura, con trazabilidad íntegra en cada comanda.</p>
+          <span class="descriptor" data-i18n="p3-desc">Operativa de Eventos</span>
+          <h3 data-i18n="p3-title">Servicio Ultrarrápido</h3>
+          <p data-i18n="p3-text">Flujo optimizado para grandes aglomeraciones: pase de plato en 45-60 segundos por cliente. Sin humos densos de fritura, con trazabilidad íntegra en cada comanda.</p>
         </div>
       </div>
     </div>
@@ -487,47 +548,47 @@
   <section class="menu-section" id="carta">
     <div class="container">
       <div class="section-header">
-        <span class="descriptor">Nuestra Carta</span>
-        <h2>Los Platos Estrella</h2>
+        <span class="descriptor" data-i18n="menu-desc">Nuestra Carta</span>
+        <h2 data-i18n="menu-title">Los Platos Estrella</h2>
       </div>
 
       <div class="dishes-grid">
         <!-- Plato 1: Pulled Pork -->
         <div class="dish-card">
           <div>
-            <span class="descriptor">18 Horas Sous-Vide</span>
-            <h3>Pulled Pork Gourmet</h3>
-            <p>Aguja de cerdo confitada a 74 °C, desmigada en sus jugos con salsa barbacoa casera libre de alérgenos, cebolla encurtida crujiente y brotes en pan brioche artesano GF/LF tostado al momento.</p>
+            <span class="descriptor" data-i18n="dish1-desc">18 Horas Sous-Vide</span>
+            <h3 data-i18n="dish1-title">Pulled Pork Gourmet</h3>
+            <p data-i18n="dish1-text">Aguja de cerdo confitada a 74 °C, desmigada en sus jugos con salsa barbacoa casera libre de alérgenos, cebolla encurtida crujiente y brotes en pan brioche artesano GF/LF tostado al momento.</p>
           </div>
           <div class="dish-footer">
-            <span>Brioche GF / LF</span>
-            <span>Servicio &lt; 60s</span>
+            <span data-i18n="dish1-foot1">Brioche GF / LF</span>
+            <span data-i18n="dish1-foot2">Servicio &lt; 60s</span>
           </div>
         </div>
 
-        <!-- Plato 2: Tacos de Ternera Mechada -->
+        <!-- Plato 2: Tacos de Vedella Mechada -->
         <div class="dish-card">
           <div>
-            <span class="descriptor">Maíz Nixtamalizado</span>
-            <h3>Tacos de Vedella Mechada</h3>
-            <p>Carne estofada al vacío durante 12 horas con marinado cítrico y especias, servida sobre tortillas artesanales de maíz 100% nixtamalizado, pico de gallo fresco y emulsión suave de chipotle y lima.</p>
+            <span class="descriptor" data-i18n="dish2-desc">Maíz Nixtamalizado</span>
+            <h3 data-i18n="dish2-title">Tacos de Vedella Mechada</h3>
+            <p data-i18n="dish2-text">Carne estofada al vacío durante 12 horas con marinado cítrico y especias, servida sobre tortillas artesanales de maíz 100% nixtamalizado, pico de gallo fresco y emulsión suave de chipotle y lima.</p>
           </div>
           <div class="dish-footer">
-            <span>100% Maíz Criollo</span>
-            <span>Servicio 45s</span>
+            <span data-i18n="dish2-foot1">100% Maíz Criollo</span>
+            <span data-i18n="dish2-foot2">Servicio 45s</span>
           </div>
         </div>
 
         <!-- Plato 3: Sides Rústicos -->
         <div class="dish-card">
           <div>
-            <span class="descriptor">Acompañamiento</span>
-            <h3>Patatas Baby Smashed</h3>
-            <p>Patatas de guarnición cocidas al vacío con romero y flor de sal, chafadas y doradas a la plancha de contacto limpia (sin aceite de freidora compartida). Servidas con alioli suave sin lactosa.</p>
+            <span class="descriptor" data-i18n="dish3-desc">Acompañamiento</span>
+            <h3 data-i18n="dish3-title">Patatas Baby Smashed</h3>
+            <p data-i18n="dish3-text">Patatas de guarnición cocidas al vacío con romero y flor de sal, chafadas y doradas a la plancha de contacto limpia (sin aceite de freidora compartida). Servidas con alioli suave sin lactosa.</p>
           </div>
           <div class="dish-footer">
-            <span>Libre de Frituras</span>
-            <span>Regeneración Plancha</span>
+            <span data-i18n="dish3-foot1">Libre de Frituras</span>
+            <span data-i18n="dish3-foot2">Regeneración Plancha</span>
           </div>
         </div>
       </div>
@@ -537,9 +598,9 @@
   <!-- Aval Sanitario -->
   <section class="endorsement-section" id="aval">
     <div class="container endorsement-box">
-      <span class="descriptor">Compromiso Sanitario</span>
-      <h3 style="color: var(--zd-oat-cream); margin-top: 0.4rem;">Homologación y Garantía de Colectivo</h3>
-      <p>Diseñado bajo los estándares del protocolo de restauración sin gluten para la adhesión oficial a la <strong>Associació Celíacs de Catalunya</strong>. Trazabilidad por lote y análisis periódico de ingredientes &lt; 20 ppm.</p>
+      <span class="descriptor" data-i18n="aval-desc">Compromiso Sanitario</span>
+      <h3 style="color: var(--zd-oat-cream); margin-top: 0.4rem;" data-i18n="aval-title">Homologación y Garantía de Colectivo</h3>
+      <p data-i18n="aval-text">Diseñado bajo los estándares del protocolo de restauración sin gluten para la adhesión oficial a la <strong>Associació Celíacs de Catalunya</strong>. Trazabilidad por lote y análisis periódico de ingredientes &lt; 20 ppm.</p>
     </div>
   </section>
 
@@ -547,31 +608,31 @@
   <section class="contact-section" id="contacto">
     <div class="container">
       <div class="contact-wrapper">
-        <span class="descriptor">Contratación y Calendario</span>
-        <h2>¿Quieres a Zero Drama en tu evento?</h2>
-        <p>Festivales, ferias gastronómicas, bodas o eventos corporativos en Cataluña y resto de la península.</p>
+        <span class="descriptor" data-i18n="form-desc">Contratación y Calendario</span>
+        <h2 data-i18n="form-title">¿Quieres a Zero Drama en tu evento?</h2>
+        <p data-i18n="form-subtitle">Festivales, ferias gastronómicas, bodas o eventos corporativos en Cataluña y resto de la península.</p>
 
         <form class="contact-form" action="mailto:info@somoszerodrama.com" method="POST" enctype="text/plain">
           <div class="form-group">
-            <label for="name">Nombre / Organización</label>
-            <input type="text" id="name" name="nombre" placeholder="Tu nombre o entidad organizadora" required>
+            <label for="name" data-i18n="form-label-name">Nombre / Organización</label>
+            <input type="text" id="name" name="nombre" placeholder="Tu nombre o entidad organizadora" required data-i18n-ph="form-ph-name">
           </div>
 
           <div class="form-group">
-            <label for="event">Tipo de Evento y Localización</label>
-            <input type="text" id="event" name="evento" placeholder="Ej: Festival All Those / Fiesta privada en Girona" required>
+            <label for="event" data-i18n="form-label-event">Tipo de Evento y Localización</label>
+            <input type="text" id="event" name="evento" placeholder="Ej: Festival All Those / Fiesta privada en Girona" required data-i18n-ph="form-ph-event">
           </div>
 
           <div class="form-group">
-            <label for="message">Detalles y Fechas Previstas</label>
-            <textarea id="message" name="mensaje" rows="4" placeholder="Número de asistentes, fechas o requerimientos del espacio" required></textarea>
+            <label for="message" data-i18n="form-label-msg">Detalles y Fechas Previstas</label>
+            <textarea id="message" name="mensaje" rows="4" placeholder="Número de asistentes, fechas o requerimientos del espacio" required data-i18n-ph="form-ph-msg"></textarea>
           </div>
 
-          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">Enviar Consulta Directa</button>
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;" data-i18n="form-submit">Enviar Consulta Directa</button>
         </form>
 
         <div class="form-direct-mail">
-          O si lo prefieres, escríbenos directamente a: <br>
+          <span data-i18n="form-alt-text">O si lo prefieres, escríbenos directamente a:</span> <br>
           <a href="mailto:info@somoszerodrama.com">info@somoszerodrama.com</a>
         </div>
       </div>
@@ -581,9 +642,222 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS</p>
+      <p data-i18n="footer-text">© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS</p>
     </div>
   </footer>
+
+  <!-- Script Internacionalización y Detección Automática -->
+  <script>
+    const translations = {
+      es: {
+        "nav-guarantee": "Garantía",
+        "nav-menu": "Carta",
+        "nav-certification": "Homologación",
+        "nav-contact-btn": "Contratación",
+        "hero-badge": "Instalación 100% Exclusiva",
+        "hero-title": "Comer en la calle sin miedo ni dramas",
+        "hero-subtitle": "Gastronomía callejera de alto nivel técnico. Cocina melosa a baja temperatura, masas ancestrales y un protocolo estricto sin contaminación cruzada ni trazas.",
+        "hero-cta": "Contratar para eventos",
+        "p1-desc": "Seguridad Clínica",
+        "p1-title": "Cero Contaminación Cruzada",
+        "p1-text": "Operamos como unidad dedicada exclusivamente libre de gluten y lácteos. Ni en el obrador central ni en el camión entra jamás harina de trigo o leche convencional.",
+        "p2-desc": "Técnica Culinaria",
+        "p2-title": "Cocción Lenta Sous-Vide",
+        "p2-text": "Carnes cocinadas al vacío a temperatura milimétrica durante 12 a 18 horas. Máxima melosidad y pasteurización certificada de lote a lote sin depender de fritos pesados.",
+        "p3-desc": "Operativa de Eventos",
+        "p3-title": "Servicio Ultrarrápido",
+        "p3-text": "Flujo optimizado para grandes aglomeraciones: pase de plato en 45-60 segundos por cliente. Sin humos densos de fritura, con trazabilidad íntegra en cada comanda.",
+        "menu-desc": "Nuestra Carta",
+        "menu-title": "Los Platos Estrella",
+        "dish1-desc": "18 Horas Sous-Vide",
+        "dish1-title": "Pulled Pork Gourmet",
+        "dish1-text": "Aguja de cerdo confitada a 74 °C, desmigada en sus jugos con salsa barbacoa casera libre de alérgenos, cebolla encurtida crujiente y brotes en pan brioche artesano GF/LF tostado al momento.",
+        "dish1-foot1": "Brioche GF / LF",
+        "dish1-foot2": "Servicio < 60s",
+        "dish2-desc": "Maíz Nixtamalizado",
+        "dish2-title": "Tacos de Vedella Mechada",
+        "dish2-text": "Carne estofada al vacío durante 12 horas con marinado cítrico y especias, servida sobre tortillas artesanales de maíz 100% nixtamalizado, pico de gallo fresco y emulsión suave de chipotle y lima.",
+        "dish2-foot1": "100% Maíz Criollo",
+        "dish2-foot2": "Servicio 45s",
+        "dish3-desc": "Acompañamiento",
+        "dish3-title": "Patatas Baby Smashed",
+        "dish3-text": "Patatas de guarnición cocidas al vacío con romero y flor de sal, chafadas y doradas a la plancha de contacto limpia (sin aceite de freidora compartida). Servidas con alioli suave sin lactosa.",
+        "dish3-foot1": "Libre de Frituras",
+        "dish3-foot2": "Regeneración Plancha",
+        "aval-desc": "Compromiso Sanitario",
+        "aval-title": "Homologación y Garantía de Colectivo",
+        "aval-text": "Diseñado bajo los estándares del protocolo de restauración sin gluten para la adhesión oficial a la <strong>Associació Celíacs de Catalunya</strong>. Trazabilidad por lote y análisis periódico de ingredientes < 20 ppm.",
+        "form-desc": "Contratación y Calendario",
+        "form-title": "¿Quieres a Zero Drama en tu evento?",
+        "form-subtitle": "Festivales, ferias gastronómicas, bodas o eventos corporativos en Cataluña y resto de la península.",
+        "form-label-name": "Nombre / Organización",
+        "form-ph-name": "Tu nombre o entidad organizadora",
+        "form-label-event": "Tipo de Evento y Localización",
+        "form-ph-event": "Ej: Festival All Those / Fiesta privada en Girona",
+        "form-label-msg": "Detalles y Fechas Previstas",
+        "form-ph-msg": "Número de asistentes, fechas o requerimientos del espacio",
+        "form-submit": "Enviar Consulta Directa",
+        "form-alt-text": "O si lo prefieres, escríbenos directamente a:",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS"
+      },
+      cat: {
+        "nav-guarantee": "Garantia",
+        "nav-menu": "Carta",
+        "nav-certification": "Homologació",
+        "nav-contact-btn": "Contractació",
+        "hero-badge": "Instal·lació 100% Exclusiva",
+        "hero-title": "Menjar al carrer sense por ni drames",
+        "hero-subtitle": "Gastronomia de carrer d'alt nivell tècnic. Cuina melosa a baixa temperatura, masses ancestrals i un protocol estricte sense contaminació creuada ni traces.",
+        "hero-cta": "Contractar per a esdeveniments",
+        "p1-desc": "Seguretat Clínica",
+        "p1-title": "Zero Contaminació Creuada",
+        "p1-text": "Operem com a unitat dedicada exclusivament lliure de gluten i làctics. Ni a l'obrador central ni al camió entra mai farina de blat o llet convencional.",
+        "p2-desc": "Tècnica Culinària",
+        "p2-title": "Cocció Lenta Sous-Vide",
+        "p2-text": "Carns cuinades al buit a temperatura mil·limètrica durant 12 a 18 hores. Màxima melositat i pasteurització certificada de lot a lot sense dependre de fregits pesats.",
+        "p3-desc": "Operativa d'Esdeveniments",
+        "p3-title": "Servei Ultraràpid",
+        "p3-text": "Flux optimitzat per a grans aglomeracions: passada de plat en 45-60 segons per client. Sense fums densos de fregidora, amb traçabilitat íntegra a cada comanda.",
+        "menu-desc": "La Nostra Carta",
+        "menu-title": "Els Plats Estrella",
+        "dish1-desc": "18 Hores Sous-Vide",
+        "dish1-title": "Pulled Pork Gourmet",
+        "dish1-text": "Cap de llom de porc confitat a 74 °C, esfilagarsat en els seus sucs amb salsa barbacoa casolana lliure d'al·lèrgens, ceba envinagrada cruixent i brots en pa brioix artesà GF/LF torrat al moment.",
+        "dish1-foot1": "Brioix GF / LF",
+        "dish1-foot2": "Servei < 60s",
+        "dish2-desc": "Blat de Moro Nixtamalitzat",
+        "dish2-title": "Tacos de Vedella Desfilada",
+        "dish2-text": "Carn estofada al buit durant 12 hores amb marinat cítric i espècies, servida sobre truites artesanals de blat de moro 100% nixtamalitzat, 'pico de gallo' fresc i emulsió suau de chipotle i llima.",
+        "dish2-foot1": "100% Blat de Moro Crioll",
+        "dish2-foot2": "Servei 45s",
+        "dish3-desc": "Acompanyament",
+        "dish3-title": "Patates Baby Smashed",
+        "dish3-text": "Patates de guarnició cuites al buit amb romaní i flor de sal, xafades i daurades a la planxa neta (sense oli de fregidora compartida). Servides amb allioli suau sense lactosa.",
+        "dish3-foot1": "Lliure de Fregits",
+        "dish3-foot2": "Regeneració Planxa",
+        "aval-desc": "Compromís Sanitari",
+        "aval-title": "Homologació i Garantia de Col·lectiu",
+        "aval-text": "Dissenyat sota els estàndards del protocol de restauració sense gluten per a l'adhesió oficial a l'<strong>Associació Celíacs de Catalunya</strong>. Traçabilitat per lot i anàlisi periòdica d'ingredients < 20 ppm.",
+        "form-desc": "Contractació i Calendari",
+        "form-title": "Vols Zero Drama al teu esdeveniment?",
+        "form-subtitle": "Festivals, fires gastronòmiques, casaments o esdeveniments corporatius a Catalunya i resta de la península.",
+        "form-label-name": "Nom / Organització",
+        "form-ph-name": "El teu nom o entitat organitzadora",
+        "form-label-event": "Tipus d'Esdeveniment i Ubicació",
+        "form-ph-event": "Ex: Festival All Those / Festa privada a Girona",
+        "form-label-msg": "Detalls i Dates Previstes",
+        "form-ph-msg": "Nombre d'assistents, dates o requeriments de l'espai",
+        "form-submit": "Enviar Consulta Directa",
+        "form-alt-text": "O si ho prefereixes, escriu-nos directament a:",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TOTS ELS DRETS RESERVATS"
+      },
+      en: {
+        "nav-guarantee": "Guarantee",
+        "nav-menu": "Menu",
+        "nav-certification": "Certification",
+        "nav-contact-btn": "Book Us",
+        "hero-badge": "100% Dedicated Facility",
+        "hero-title": "Street food without fear or drama",
+        "hero-subtitle": "High-technique street gastronomy. Tender sous-vide meats, heritage heirloom corn, and strict cross-contamination & trace-free protocols.",
+        "hero-cta": "Book for your event",
+        "p1-desc": "Clinical Safety",
+        "p1-title": "Zero Cross-Contamination",
+        "p1-text": "We operate as an exclusively gluten-free and dairy-free kitchen. Conventional wheat flour or cow milk never enters our commissary prep kitchen or food truck.",
+        "p2-desc": "Culinary Technique",
+        "p2-title": "Sous-Vide Slow Cooking",
+        "p2-text": "Meats cooked in vacuum pouches at millimeter-precise temperatures for 12 to 18 hours. Exceptional tenderness and certified batch-to-batch safety without heavy frying.",
+        "p3-desc": "Event Operations",
+        "p3-title": "Ultra-Fast Service",
+        "p3-text": "Optimized high-volume workflow: dish turnover in 45-60 seconds per customer. Clean operations without frying fumes and complete ingredient traceability.",
+        "menu-desc": "Signature Menu",
+        "menu-title": "Star Dishes",
+        "dish1-desc": "18-Hour Sous-Vide",
+        "dish1-title": "Gourmet Pulled Pork",
+        "dish1-text": "Pork shoulder confited at 74 °C, pulled in its natural juices with house-made allergen-free BBQ sauce, crunchy pickled onion, and microgreens on toasted artisan GF/LF brioche.",
+        "dish1-foot1": "Artisan GF / LF Brioche",
+        "dish1-foot2": "Service < 60s",
+        "dish2-desc": "Nixtamalized Corn",
+        "dish2-title": "Braised Beef Tacos",
+        "dish2-text": "12-hour citrus-braised beef on fresh 100% nixtamalized heirloom corn tortillas, topped with fresh pico de gallo and a mild chipotle-lime emulsion.",
+        "dish2-foot1": "100% Heirloom Corn",
+        "dish2-foot2": "Service 45s",
+        "dish3-desc": "Sides",
+        "dish3-title": "Smashed Baby Potatoes",
+        "dish3-text": "Rosemary and sea salt baby potatoes, smashed and crisped on a clean dedicated flat-top griddle (no shared fryers). Served with delicate lactose-free aioli.",
+        "dish3-foot1": "100% Fryer-Free",
+        "dish3-foot2": "Griddle Finished",
+        "aval-desc": "Sanitary Commitment",
+        "aval-title": "Accreditation & Community Guarantee",
+        "aval-text": "Designed according to strict gluten-free dining protocols for official partnership with the <strong>Associació Celíacs de Catalunya</strong>. Batch traceability and < 20 ppm certified testing.",
+        "form-desc": "Booking & Calendar",
+        "form-title": "Want Zero Drama at your event?",
+        "form-subtitle": "Festivals, food fairs, private weddings, and corporate gatherings across Catalonia and beyond.",
+        "form-label-name": "Name / Organization",
+        "form-ph-name": "Your name or company",
+        "form-label-event": "Event Type & Location",
+        "form-ph-event": "e.g., All Those Food Market / Private Party in Girona",
+        "form-label-msg": "Event Details & Planned Dates",
+        "form-ph-msg": "Guest count, dates, and venue requirements",
+        "form-submit": "Send Direct Inquiry",
+        "form-alt-text": "Or email us directly at:",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · ALL RIGHTS RESERVED"
+      }
+    };
+
+    function setLanguage(lang) {
+      if (!translations[lang]) lang = 'en';
+      
+      // Actualizar atributos y botones
+      document.documentElement.lang = lang === 'cat' ? 'ca' : lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+
+      // Actualizar textos simples y HTML
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      // Actualizar Placeholders
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const key = el.getAttribute('data-i18n-ph');
+        if (translations[lang][key]) {
+          el.setAttribute('placeholder', translations[lang][key]);
+        }
+      });
+
+      localStorage.setItem('zd_lang', lang);
+    }
+
+    // Detección automática al cargar
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('zd_lang');
+      if (savedLang && translations[savedLang]) {
+        setLanguage(savedLang);
+        return;
+      }
+
+      // Detectar idioma del navegador
+      const userLangs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+      let detected = 'en';
+
+      for (const l of userLangs) {
+        const primary = l.toLowerCase().split('-')[0];
+        if (primary === 'ca') {
+          detected = 'cat';
+          break;
+        } else if (primary === 'es') {
+          detected = 'es';
+          break;
+        }
+      }
+
+      setLanguage(detected);
+    });
+  </script>
 
 </body>
 </html>
