@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero Drama · Street Food 100% Gluten &amp; Lactose Free</title>
+  <meta name="description" content="Food Truck 100% libre de gluten y sin lactosa. Cocina sous-vide, tacos nixtamalizados y garantía estricta sin contaminación cruzada.">
+  
+  <!-- Tipografías oficiales -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Prata&display=swap" rel="stylesheet">
+
+  <style>
+    /* Design Tokens Oficiales */
+    :root {
+      --zd-espresso: #1A1817;
+      --zd-terracotta: #C85A32;
+      --zd-oat-cream: #F4EBD9;
+      --zd-charcoal: #2B2D2F;
+      --zd-warm-slate: #7A7875;
+      --zd-white: #FFFFFF;
+
+      --zd-font-display: 'Prata', Georgia, serif;
+      --zd-font-sub: 'Montserrat', -apple-system, sans-serif;
+      --zd-font-body: 'Inter', -apple-system, sans-serif;
+
+      --zd-radius-sm: 4px;
+      --zd-radius-md: 8px;
+      --zd-radius-lg: 14px;
+      --zd-transition: 0.2s ease-in-out;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--zd-espresso);
+      color: var(--zd-oat-cream);
+      font-family: var(--zd-font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Tipografía Global */
+    h1, h2, h3 {
+      font-family: var(--zd-font-display);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 400;
+    }
+
+    .descriptor {
+      font-family: var(--zd-font-sub);
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--zd-terracotta);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Botones y Badges */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.8rem;
+      font-family: var(--zd-font-sub);
+      font-weight: 800;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      background-color: var(--zd-terracotta);
+      color: var(--zd-oat-cream);
+      border: none;
+      border-radius: var(--zd-radius-md);
+      cursor: pointer;
+      transition: opacity var(--zd-transition), transform var(--zd-transition);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+    }
+
+    .badge-allergen {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      background-color: rgba(200, 90, 50, 0.15);
+      border: 1px solid var(--zd-terracotta);
+      color: var(--zd-terracotta);
+      font-family: var(--zd-font-sub);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Navegación */
+    .navbar {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(244, 235, 217, 0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--zd-font-display);
+      font-size: 1.35rem;
+      letter-spacing: 0.1em;
+      color: var(--zd-oat-cream);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-family: var(--zd-font-sub);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      color: var(--zd-terracotta);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 5rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero-stamp-wrapper {
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--zd-oat-cream);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #C9C5BE;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* Sello SVG Oficial */
+    .stamp-svg {
+      width: 220px;
+      height: 220px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Grid de Pilares Sanitarios */
+    .pillars-section {
+      padding: 4rem 0;
+      background-color: #211E1D;
+      border-top: 1px solid rgba(244, 235, 217, 0.08);
+      border-bottom: 1px solid rgba(244, 235, 217, 0.08);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .pillar-card {
+      background-color: var(--zd-espresso);
+      border: 1px solid rgba(244, 235, 217, 0.1);
+      border-radius: var(--zd-radius-lg);
+      padding: 2.25rem 1.75rem;
+    }
+
+    .pillar-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--zd-oat-cream);
+    }
+
+    .pillar-card p {
+      color: #B3ADA3;
+      font-size: 0.95rem;
+    }
+
+    /* Platos Estrella (Cards Oat Cream) */
+    .menu-section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.1rem;
+      color: var(--zd-oat-cream);
+    }
+
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 2rem;
+    }
+
+    .dish-card {
+      background-color: var(--zd-oat-cream);
+      color: var(--zd-espresso);
+      border-radius: var(--zd-radius-lg);
+      padding: 2.5rem 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .dish-card .descriptor {
+      color: var(--zd-terracotta);
+    }
+
+    .dish-card h3 {
+      font-size: 1.5rem;
+      color: var(--zd-espresso);
+      margin-bottom: 0.75rem;
+    }
+
+    .dish-card p {
+      color: var(--zd-charcoal);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+
+    .dish-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(26, 24, 23, 0.12);
+      font-family: var(--zd-font-sub);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--zd-warm-slate);
+    }
+
+    /* Aval Sanitario */
+    .endorsement-section {
+      padding: 3.5rem 0;
+      background-color: rgba(200, 90, 50, 0.08);
+      border-top: 1px solid rgba(200, 90, 50, 0.25);
+      border-bottom: 1px solid rgba(200, 90, 50, 0.25);
+      text-align: center;
+    }
+
+    .endorsement-box {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .endorsement-box p {
+      color: #D3CDC5;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Formulario y Contacto */
+    .contact-section {
+      padding: 5rem 0 6rem;
+    }
+
+    .contact-wrapper {
+      background-color: #211E1D;
+      border: 1px solid rgba(244, 235, 217, 0.1);
+      border-radius: var(--zd-radius-lg);
+      padding: 3.5rem 2.5rem;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-wrapper h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-wrapper p {
+      color: #B3ADA3;
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--zd-font-sub);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--zd-oat-cream);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background-color: var(--zd-espresso);
+      border: 1px solid rgba(244, 235, 217, 0.2);
+      border-radius: var(--zd-radius-sm);
+      padding: 0.85rem 1rem;
+      font-family: var(--zd-font-body);
+      color: var(--zd-oat-cream);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--zd-transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--zd-terracotta);
+    }
+
+    .form-direct-mail {
+      margin-top: 1.75rem;
+      font-size: 0.85rem;
+      color: var(--zd-warm-slate);
+    }
+
+    .form-direct-mail a {
+      color: var(--zd-terracotta);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(244, 235, 217, 0.08);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--zd-warm-slate);
+      font-family: var(--zd-font-sub);
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.1rem; }
+      .contact-wrapper { padding: 2rem 1.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">ZERO DRAMA</a>
+      <div class="nav-links">
+        <a href="#garantia">Garantía</a>
+        <a href="#carta">Carta</a>
+        <a href="#aval">Homologación</a>
+        <a href="#contacto" class="btn-primary" style="padding: 0.5rem 1.2rem;">Contratación</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-content">
+      
+      <!-- Sello Circular Oficial Zero Drama -->
+      <div class="hero-stamp-wrapper">
+        <svg class="stamp-svg" viewBox="0 0 320 320">
+          <defs>
+            <path id="topArch" d="M 44,160 A 116,116 0 0,1 276,160" fill="none"/>
+            <path id="botArch" d="M 32,160 A 128,128 0 0,0 288,160" fill="none"/>
+          </defs>
+          <circle cx="160" cy="160" r="154" fill="none" stroke="#F4EBD9" stroke-width="3.5"/>
+          <circle cx="160" cy="160" r="147" fill="none" stroke="#F4EBD9" stroke-width="1.2"/>
+          <text font-family="'Prata', Georgia, serif" font-size="22px" letter-spacing="3.5px" fill="#F4EBD9">
+            <textPath href="#topArch" startOffset="50%" text-anchor="middle">ZERO DRAMA</textPath>
+          </text>
+          <!-- Máscara Bimodal con entrecejo centrado -->
+          <g transform="translate(160,158) scale(0.68)">
+            <!-- Mitad izquierda negra (drama) -->
+            <path d="M 0,-85 C -45,-85 -75,-40 -75,20 C -75,65 -45,95 0,105 Z" fill="#F4EBD9" />
+            <path d="M -50,-35 Q -30,-50 -15,-35" stroke="#1A1817" stroke-width="4" fill="none" stroke-linecap="round" />
+            <path d="M -45,-15 Q -30,-5 -15,-15" fill="#1A1817" />
+            <path d="M -30,-2 C -36,8 -42,16 -30,22 C -20,16 -24,8 -30,-2 Z" fill="#1A1817" />
+            <path d="M -50,45 Q -30,30 0,38" stroke="#1A1817" stroke-width="6" fill="none" stroke-linecap="round" />
+            <!-- Mitad derecha clara (alivio) -->
+            <path d="M 0,-85 C 45,-85 75,-40 75,20 C 75,65 45,95 0,105 Z" fill="none" stroke="#F4EBD9" stroke-width="6" />
+            <path d="M 15,-35 Q 35,-50 50,-35" stroke="#F4EBD9" stroke-width="4" fill="none" stroke-linecap="round" />
+            <path d="M 18,-15 Q 32,-30 48,-15 Z" fill="#F4EBD9" />
+            <path d="M 0,38 Q 30,45 50,15" stroke="#F4EBD9" stroke-width="6" fill="none" stroke-linecap="round" />
+            <line x1="0" y1="-85" x2="0" y2="105" stroke="#F4EBD9" stroke-width="4" />
+          </g>
+          <text font-family="'Montserrat', sans-serif" font-size="12px" font-weight="700" letter-spacing="2.8px" fill="#F4EBD9">
+            <textPath href="#botArch" startOffset="50%" text-anchor="middle">• GLUTEN &amp; LACTOSE FREE •</textPath>
+          </text>
+        </svg>
+      </div>
+
+      <span class="badge-allergen">Instalación 100% Exclusiva</span>
+      <h1 style="margin-top: 1rem;">Comer en la calle sin miedo ni dramas</h1>
+      <p>Gastronomía callejera de alto nivel técnico. Cocina melosa a baja temperatura, masas ancestrales y un protocolo estricto sin contaminación cruzada ni trazas.</p>
+      <a href="#contacto" class="btn-primary">Contratar para eventos</a>
+    </div>
+  </header>
+
+  <!-- Pilares de Garantía -->
+  <section class="pillars-section" id="garantia">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <span class="descriptor">Seguridad Clínica</span>
+          <h3>Cero Contaminación Cruzada</h3>
+          <p>Operamos como unidad dedicada exclusivamente libre de gluten y lácteos. Ni en el obrador central ni en el camión entra jamás harina de trigo o leche convencional.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="descriptor">Técnica Culinaria</span>
+          <h3>Cocción Lenta Sous-Vide</h3>
+          <p>Carnes cocinadas al vacío a temperatura milimétrica durante 12 a 18 horas. Máxima melosidad y pasteurización certificada de lote a lote sin depender de fritos pesados.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="descriptor">Operativa de Eventos</span>
+          <h3>Servicio Ultrarrápido</h3>
+          <p>Flujo optimizado para grandes aglomeraciones: pase de plato en 45-60 segundos por cliente. Sin humos densos de fritura, con trazabilidad íntegra en cada comanda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platos Estrella -->
+  <section class="menu-section" id="carta">
+    <div class="container">
+      <div class="section-header">
+        <span class="descriptor">Nuestra Carta</span>
+        <h2>Los Platos Estrella</h2>
+      </div>
+
+      <div class="dishes-grid">
+        <!-- Plato 1: Pulled Pork -->
+        <div class="dish-card">
+          <div>
+            <span class="descriptor">18 Horas Sous-Vide</span>
+            <h3>Pulled Pork Gourmet</h3>
+            <p>Aguja de cerdo confitada a 74 °C, desmigada en sus jugos con salsa barbacoa casera libre de alérgenos, cebolla encurtida crujiente y brotes en pan brioche artesano GF/LF tostado al momento.</p>
+          </div>
+          <div class="dish-footer">
+            <span>Brioche GF / LF</span>
+            <span>Servicio &lt; 60s</span>
+          </div>
+        </div>
+
+        <!-- Plato 2: Tacos de Ternera Mechada -->
+        <div class="dish-card">
+          <div>
+            <span class="descriptor">Maíz Nixtamalizado</span>
+            <h3>Tacos de Vedella Mechada</h3>
+            <p>Carne estofada al vacío durante 12 horas con marinado cítrico y especias, servida sobre tortillas artesanales de maíz 100% nixtamalizado, pico de gallo fresco y emulsión suave de chipotle y lima.</p>
+          </div>
+          <div class="dish-footer">
+            <span>100% Maíz Criollo</span>
+            <span>Servicio 45s</span>
+          </div>
+        </div>
+
+        <!-- Plato 3: Sides Rústicos -->
+        <div class="dish-card">
+          <div>
+            <span class="descriptor">Acompañamiento</span>
+            <h3>Patatas Baby Smashed</h3>
+            <p>Patatas de guarnición cocidas al vacío con romero y flor de sal, chafadas y doradas a la plancha de contacto limpia (sin aceite de freidora compartida). Servidas con alioli suave sin lactosa.</p>
+          </div>
+          <div class="dish-footer">
+            <span>Libre de Frituras</span>
+            <span>Regeneración Plancha</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aval Sanitario -->
+  <section class="endorsement-section" id="aval">
+    <div class="container endorsement-box">
+      <span class="descriptor">Compromiso Sanitario</span>
+      <h3 style="color: var(--zd-oat-cream); margin-top: 0.4rem;">Homologación y Garantía de Colectivo</h3>
+      <p>Diseñado bajo los estándares del protocolo de restauración sin gluten para la adhesión oficial a la <strong>Associació Celíacs de Catalunya</strong>. Trazabilidad por lote y análisis periódico de ingredientes &lt; 20 ppm.</p>
+    </div>
+  </section>
+
+  <!-- Formulario / Contacto -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="contact-wrapper">
+        <span class="descriptor">Contratación y Calendario</span>
+        <h2>¿Quieres a Zero Drama en tu evento?</h2>
+        <p>Festivales, ferias gastronómicas, bodas o eventos corporativos en Cataluña y resto de la península.</p>
+
+        <form class="contact-form" action="mailto:info@somoszerodrama.com" method="POST" enctype="text/plain">
+          <div class="form-group">
+            <label for="name">Nombre / Organización</label>
+            <input type="text" id="name" name="nombre" placeholder="Tu nombre o entidad organizadora" required>
+          </div>
+
+          <div class="form-group">
+            <label for="event">Tipo de Evento y Localización</label>
+            <input type="text" id="event" name="evento" placeholder="Ej: Festival All Those / Fiesta privada en Girona" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Detalles y Fechas Previstas</label>
+            <textarea id="message" name="mensaje" rows="4" placeholder="Número de asistentes, fechas o requerimientos del espacio" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;">Enviar Consulta Directa</button>
+        </form>
+
+        <div class="form-direct-mail">
+          O si lo prefieres, escríbenos directamente a: <br>
+          <a href="mailto:info@somoszerodrama.com">info@somoszerodrama.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS</p>
+    </div>
+  </footer>
+
+</body>
+</html>
