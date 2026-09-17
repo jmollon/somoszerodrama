@@ -6,7 +6,7 @@
   <title>Aviso Legal — Zero Drama Food Truck</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Prata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Prata&display=swap" rel="stylesheet">
   <style>
     :root {
       --zd-espresso: #1A1817;
@@ -28,8 +28,8 @@
       -webkit-font-smoothing: antialiased;
     }
     header {
-      border-bottom: 1px solid rgba(244, 235, 217, 0.15);
-      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(244, 235, 217, 0.1);
+      padding: 1.25rem 0;
     }
     .container {
       width: 100%;
@@ -42,13 +42,27 @@
       justify-content: space-between;
       align-items: center;
     }
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+    }
     .brand-title {
       font-family: var(--zd-font-display);
-      font-size: 1.25rem;
-      letter-spacing: 0.12em;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--zd-oat-cream);
-      text-decoration: none;
+    }
+    .brand-subtitle {
+      font-family: var(--zd-font-sub);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--zd-terracotta);
+      text-transform: uppercase;
+      margin-top: 3px;
     }
     .back-link {
       font-family: var(--zd-font-sub);
@@ -129,13 +143,13 @@
     }
     td { color: #D3CDC4; }
     footer {
-      border-top: 1px solid rgba(244, 235, 217, 0.15);
+      border-top: 1px solid rgba(244, 235, 217, 0.1);
       padding: 2.5rem 0;
       font-size: 0.75rem;
       color: var(--zd-warm-slate);
       text-align: center;
       font-family: var(--zd-font-sub);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
     }
     footer a {
       color: var(--zd-oat-cream);
@@ -148,7 +162,10 @@
 
   <header>
     <div class="container nav-inner">
-      <a href="index.html" class="brand-title">Zero Drama</a>
+      <a href="index.html" class="brand-block">
+        <span class="brand-title">ZERO DRAMA</span>
+        <span class="brand-subtitle">· GLUTEN &amp; LACTOSE FREE ·</span>
+      </a>
       <a href="index.html" class="back-link">← Volver a la web</a>
     </div>
   </header>
@@ -177,7 +194,7 @@
             </tr>
             <tr>
               <th>Email de Contacto</th>
-              <td>info@somoszerodrama.com</td>
+              <td>hola@somoszerodrama.com</td>
             </tr>
             <tr>
               <th>Dominio Principal</th>
@@ -204,7 +221,7 @@
       <p>Queda expresamente prohibida la reproducción, distribución o comunicación pública total o parcial de los contenidos de esta web sin la autorización previa y por escrito del titular.</p>
 
       <h2>4. Enlaces Externos (Links)</h2>
-      <p>En caso de que en somoszerodrama.com se dispongan enlaces hacia otros portales de Internet (como entidades colaboradoras o redes sociales), Zero Drama no ejercerá ningún tipo de control sobre dichos sitios ni asumirá responsabilidad por los contenidos ni por las políticas de privacidad de los mismos.</p>
+      <p>En caso de que en somoszerodrama.com se dispongan enlaces hacia otros portales de Internet, Zero Drama no ejercerá ningún tipo de control sobre dichos sitios ni asumirá responsabilidad por los contenidos ni por las políticas de privacidad de los mismos.</p>
 
       <h2>5. Legislación Aplicable y Jurisdicción</h2>
       <p>Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, sometiéndose las partes expresamente a la competencia de los Juzgados y Tribunales de la provincia del domicilio del titular.</p>
