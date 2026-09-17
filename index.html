@@ -662,104 +662,103 @@
       
       <div class="hero-stamp-wrapper">
         <svg class="stamp-svg" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-           <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800&amp;family=Prata&amp;display=swap');
+          <defs>
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800&amp;family=Prata&amp;display=swap');
 
-      .texto-superior {
-        font-family: 'Prata', Georgia, serif;
-        font-size: 98px;
-        font-weight: 800;
-        fill: #F4EBD9;
-        letter-spacing: 16px;
-        text-anchor: middle;
-      }
+              .texto-superior {
+                font-family: 'Prata', Georgia, serif;
+                font-size: 88px;
+                fill: #F4EBD9;
+                letter-spacing: 8px;
+                text-anchor: middle;
+              }
 
-      .texto-sub-1 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 45px;
-        font-weight: 800;
-        fill: #F4EBD9;
-        letter-spacing: 14px;
-        text-anchor: middle;
-      }
+              .texto-sub-1 {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 36px;
+                font-weight: 800;
+                fill: #F4EBD9;
+                letter-spacing: 7px;
+                text-anchor: middle;
+              }
 
-      .texto-sub-2 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 60px;
-        font-weight: 800;
-        fill: #F4EBD9;
-        letter-spacing: 14px;
-        text-anchor: middle;
-      }
+              .texto-sub-2 {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 52px;
+                font-weight: 800;
+                fill: #F4EBD9;
+                letter-spacing: 12px;
+                text-anchor: middle;
+              }
 
-      .anillo-exterior-grueso {
-        fill: none;
-        stroke: #F4EBD9;
-        stroke-width: 15;
-      }
+              .anillo-exterior-grueso {
+                fill: none;
+                stroke: #F4EBD9;
+                stroke-width: 15;
+              }
 
-      .anillo-fino {
-        fill: none;
-        stroke: #F4EBD9;
-        stroke-width: 6;
-      }
+              .anillo-fino {
+                fill: none;
+                stroke: #F4EBD9;
+                stroke-width: 6;
+              }
 
-      .estrella {
-        fill: #F4EBD9;
-      }
-    </style>
+              .estrella {
+                fill: #F4EBD9;
+              }
+            </style>
 
-    <!-- Trayectoria para ZERO DRAMA -->
-    <path id="arco-zero-drama" 
-          d="M 170,500 A 330,330 0 1,1 830,500" 
-          fill="none" />
+            <!-- Trayectoria superior: ZERO DRAMA -->
+            <path id="arco-zero-drama" 
+                  d="M 160,500 A 340,340 0 1,1 840,500" 
+                  fill="none" />
 
-    <!-- Trayectoria para GLUTEN & LACTOSE FREE (margen interior exacto de 39px) -->
-    <path id="arco-sub-1" 
-          d="M 150,500 A 350,350 0 0,0 850,500" 
-          fill="none" />
+            <!-- Trayectoria inferior 1: GLUTEN & LACTOSE FREE -->
+            <path id="arco-sub-1" 
+                  d="M 145,500 A 355,355 0 0,0 855,500" 
+                  fill="none" />
 
-    <!-- Trayectoria para FOOD TRUCK (margen exterior exacto de 39px) -->
-    <path id="arco-sub-2" 
-          d="M 80,500 A 420,420 0 0,0 920,500" 
-          fill="none" />
-  </defs>
+            <!-- Trayectoria inferior 2: FOOD TRUCK -->
+            <path id="arco-sub-2" 
+                  d="M 91,500 A 409,409 0 0,0 909,500" 
+                  fill="none" />
+          </defs>
 
-  <!-- ==================== 1. CAPA DE FONDO: MÁSCARAS ==================== -->
-  <image href="mascaras_V2-removebg-preview.png" 
-         xlink:href="mascaras_V2-removebg-preview.png" 
-         x="225" y="320" 
-         width="575" height="400" 
-         preserveAspectRatio="xMidYMid meet" />
+          <!-- 1. Capa de fondo: Máscaras (no pisan los círculos) -->
+          <image href="mascaras_V2-removebg-preview.png" 
+                 xlink:href="mascaras_V2-removebg-preview.png" 
+                 x="200" y="285" 
+                 width="600" height="430" 
+                 preserveAspectRatio="xMidYMid meet" />
 
-  <!-- ==================== 2. CAPA MEDIA: CÍRCULOS CONCÉNTRICOS ==================== -->
-  <circle cx="500" cy="500" r="472" class="anillo-exterior-grueso" />
-  <circle cx="500" cy="500" r="448" class="anillo-fino" />
-  <circle cx="500" cy="500" r="290" class="anillo-fino" />
+          <!-- 2. Capa media: Círculos concéntricos -->
+          <circle cx="500" cy="500" r="472" class="anillo-exterior-grueso" />
+          <circle cx="500" cy="500" r="448" class="anillo-fino" />
+          <circle cx="500" cy="500" r="290" class="anillo-fino" />
 
-  <!-- ==================== 3. CAPA SUPERIOR: ESTRELLAS ==================== -->
-  <polygon class="estrella" points="131,476 139,493 158,494 143,506 148,524 131,513 114,524 119,506 104,494 123,493" />
-  <polygon class="estrella" points="869,476 877,493 896,494 881,506 886,524 869,513 852,524 857,506 842,494 861,493" />
+          <!-- 3. Capa superior: Estrellas -->
+          <polygon class="estrella" points="131,476 139,493 158,494 143,506 148,524 131,513 114,524 119,506 104,494 123,493" />
+          <polygon class="estrella" points="869,476 877,493 896,494 881,506 886,524 869,513 852,524 857,506 842,494 861,493" />
 
-  <!-- ==================== 4. TEXTOS CURVOS CENTRADOS ==================== -->
-  <text class="texto-superior">
-    <textPath href="#arco-zero-drama" xlink:href="#arco-zero-drama" startOffset="50%">
-      ZERO DRAMA
-    </textPath>
-  </text>
+          <!-- 4. Textos curvos centrados -->
+          <text class="texto-superior">
+            <textPath href="#arco-zero-drama" xlink:href="#arco-zero-drama" startOffset="50%">
+              ZERO DRAMA
+            </textPath>
+          </text>
 
-  <text class="texto-sub-1">
-    <textPath href="#arco-sub-1" xlink:href="#arco-sub-1" startOffset="50%">
-      GLUTEN &amp; LACTOSE FREE
-    </textPath>
-  </text>
+          <text class="texto-sub-1">
+            <textPath href="#arco-sub-1" xlink:href="#arco-sub-1" startOffset="50%">
+              GLUTEN &amp; LACTOSE FREE
+            </textPath>
+          </text>
 
-  <text class="texto-sub-2">
-    <textPath href="#arco-sub-2" xlink:href="#arco-sub-2" startOffset="50%">
-      FOOD TRUCK
-    </textPath>
-  </text>
+          <text class="texto-sub-2">
+            <textPath href="#arco-sub-2" xlink:href="#arco-sub-2" startOffset="50%">
+              FOOD TRUCK
+            </textPath>
+          </text>
         </svg>
       </div>
 
