@@ -668,34 +668,35 @@
 
               .texto-superior {
                 font-family: 'Prata', Georgia, serif;
-                font-size: 88px;
-                fill: #F4EBD9;
-                letter-spacing: 8px;
-                text-anchor: middle;
-              }
-
-              .texto-sub-1 {
-                font-family: 'Montserrat', sans-serif;
-                font-size: 36px;
-                font-weight: 800;
+                font-size: 98px;
+                font-weight: normal;
                 fill: #F4EBD9;
                 letter-spacing: 7px;
                 text-anchor: middle;
               }
 
-              .texto-sub-2 {
+              .texto-sub-1 {
                 font-family: 'Montserrat', sans-serif;
-                font-size: 52px;
+                font-size: 50px;
                 font-weight: 800;
                 fill: #F4EBD9;
-                letter-spacing: 12px;
+                letter-spacing: 14px;
                 text-anchor: middle;
               }
+<!-- 
+              .texto-sub-2 {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 60px;
+                font-weight: normal;
+                fill: #F4EBD9;
+                letter-spacing: 14px;
+                text-anchor: middle;
+              }-->
 
               .anillo-exterior-grueso {
                 fill: none;
                 stroke: #F4EBD9;
-                stroke-width: 15;
+                stroke-width: 12;
               }
 
               .anillo-fino {
@@ -711,43 +712,47 @@
 
             <!-- Trayectoria superior: ZERO DRAMA -->
             <path id="arco-zero-drama" 
-                  d="M 160,500 A 340,340 0 1,1 840,500" 
+                  d="M 170,500 A 330,330 0 1,1 830,500" 
                   fill="none" />
 
             <!-- Trayectoria inferior 1: GLUTEN & LACTOSE FREE -->
             <path id="arco-sub-1" 
-                  d="M 145,500 A 355,355 0 0,0 855,500" 
+                  d="M 120,500 A 380,380 0 0,0 880,500" 
                   fill="none" />
 
             <!-- Trayectoria inferior 2: FOOD TRUCK -->
             <path id="arco-sub-2" 
-                  d="M 91,500 A 409,409 0 0,0 909,500" 
+                  d="M 80,500 A 420,420 0 0,0 920,500" 
                   fill="none" />
-            <!-- Mascara de recorte -->
+
+            <!-- Máscara de recorte circular -->
             <clipPath id="recorte-mascaras">
-                  <circle cx="500" cy="500" r="286" />
-                  </clipPath>
+              <circle cx="500" cy="500" r="280" />
+            </clipPath>
           </defs>
 
-          <!-- 1. Capa de fondo: Máscaras (no pisan los círculos) -->
+          <!-- 1. Fondo interior oscuro con contraste -->
+          <circle cx="500" cy="500" r="472" fill="#1A1817" />
+
+          <!-- 2. Capa central: Máscaras en Oak Cream limpias -->
           <image href="mascaras_V2-removebg-preview.png" 
           xlink:href="mascaras_V2-removebg-preview.png" 
-          x="200" y="285" 
-          width="600" height="430" 
+  	  x="270" y="270" 
+          width="460" height="460" 
           clip-path="url(#recorte-mascaras)"
-          style="mix-blend-mode: multiply;"
+          style="mix-blend-mode: screen;"
           preserveAspectRatio="xMidYMid meet" />
 
-          <!-- 2. Capa media: Círculos concéntricos -->
+          <!-- 3. Anillos concéntricos -->
           <circle cx="500" cy="500" r="472" class="anillo-exterior-grueso" />
           <circle cx="500" cy="500" r="448" class="anillo-fino" />
           <circle cx="500" cy="500" r="290" class="anillo-fino" />
 
-          <!-- 3. Capa superior: Estrellas -->
+          <!-- 4. Estrellas laterales -->
           <polygon class="estrella" points="131,476 139,493 158,494 143,506 148,524 131,513 114,524 119,506 104,494 123,493" />
           <polygon class="estrella" points="869,476 877,493 896,494 881,506 886,524 869,513 852,524 857,506 842,494 861,493" />
 
-          <!-- 4. Textos curvos centrados -->
+          <!-- 5. Textos curvos centrados -->
           <text class="texto-superior">
             <textPath href="#arco-zero-drama" xlink:href="#arco-zero-drama" startOffset="50%">
               ZERO DRAMA
@@ -760,14 +765,13 @@
             </textPath>
           </text>
 
-          <text class="texto-sub-2">
+   <!--        <text class="texto-sub-2">
             <textPath href="#arco-sub-2" xlink:href="#arco-sub-2" startOffset="50%">
               FOOD TRUCK
             </textPath>
-          </text>
+          </text>-->
         </svg>
       </div>
-
       <span class="badge-allergen" data-i18n="hero-badge">Instalación 100% Exclusiva</span>
       <span class="hero-eyebrow" data-i18n="hero-eyebrow">• FOOD TRUCK 100% GLUTEN &amp; LACTOSE FREE •</span>
 
@@ -1092,7 +1096,7 @@
         "form-label-msg": "Detalls i Dates Previstes",
         "form-ph-msg": "Nombre d'assistents, dates o requeriments de l'espai",
         "form-legal-check": "He llegit i accepto la <a href='privacidad.html' target='_blank' style='color: var(--zd-terracotta); text-decoration: underline;'>Política de Privacitat</a>.",
-        "form-legal-layer": "<strong>Responsable:</strong> Zero Drama Food Truck.<br><strong>Finalitat:</strong> Gestió i resposta a consultes de disponibilitat i contractació.<br><strong>Legitimació:</strong> El teu consentiment explícit en remetre el formulari.<br><strong>Drets:</strong> Accés, rectificació i supressió escrivint a hola@somoszerodrama.com.",
+        "form-legal-layer": "<strong>Responsable:</strong> Zero Drama Food Truck.<br><strong>Finalidad:</strong> Gestió i resposta a consultes de disponibilitat i contractació.<br><strong>Legitimació:</strong> El teu consentiment explícit en remetre el formulari.<br><strong>Drets:</strong> Accés, rectificació i supressió escrivint a hola@somoszerodrama.com.",
         "form-submit": "Enviar Consulta Directa",
         "form-msg-success": "Sol·licitud enviada amb èxit!",
         "form-msg-sub": "Revisarem els detalls i et respondrem en menys de 24 hores.",
