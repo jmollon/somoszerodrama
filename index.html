@@ -255,7 +255,7 @@
       display: block;
     }
 
-    .hero h1 {
+    h1 {
       font-size: 2.75rem;
       line-height: 1.18;
       margin-bottom: 1.25rem;
@@ -453,7 +453,6 @@
       border-color: #e57373;
     }
 
-    /* FILA DOBLE DE CONTACTO */
     .form-row-duo {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -467,7 +466,6 @@
       }
     }
 
-    /* DESPLEGABLE ESTILIZADO */
     .select-wrapper {
       position: relative;
       width: 100%;
@@ -541,6 +539,39 @@
       color: var(--zd-oat-cream);
     }
 
+    .form-legal-group {
+      margin-top: 0.25rem;
+    }
+
+    .form-checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.8rem;
+      text-transform: none;
+      cursor: pointer;
+      color: #D3CDC4;
+      font-family: var(--zd-font-body);
+    }
+
+    .form-checkbox-label input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-top: 0.2rem;
+      accent-color: var(--zd-terracotta);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .form-legal-layer {
+      font-size: 0.72rem;
+      color: var(--zd-warm-slate);
+      line-height: 1.45;
+      margin-top: 0.6rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid rgba(244, 235, 217, 0.1);
+    }
+
     .form-direct-mail {
       margin-top: 1.75rem;
       font-size: 0.85rem;
@@ -553,18 +584,46 @@
       text-decoration: underline;
     }
 
+    /* FOOTER */
     footer {
-      padding: 2.5rem 0;
-      border-top: 1px solid rgba(244, 235, 217, 0.08);
-      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(244, 235, 217, 0.1);
       font-size: 0.8rem;
       color: var(--zd-warm-slate);
       font-family: var(--zd-font-sub);
       letter-spacing: 0.05em;
     }
 
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-legal-links a {
+      color: var(--zd-oat-cream);
+      text-decoration: underline;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color var(--zd-transition);
+    }
+
+    .footer-legal-links a:hover {
+      color: var(--zd-terracotta);
+    }
+
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.1rem; }
+      h1 { font-size: 2.1rem; }
       .contact-wrapper { padding: 2rem 1.5rem; }
       .nav-links { display: none; }
     }
@@ -782,6 +841,23 @@
             <span class="field-error" data-fs-error="mensaje"></span>
           </div>
 
+          <!-- Checkbox Consentimiento Legal LOPD / RGPD -->
+          <div class="form-legal-group">
+            <label class="form-checkbox-label">
+              <input type="checkbox" id="privacyConsent" name="consentimiento_rgpd" required data-fs-field>
+              <span data-i18n="form-legal-check">He leído y acepto la <a href="privacidad.html" target="_blank" style="color: var(--zd-terracotta); text-decoration: underline;">Política de Privacidad</a>.</span>
+            </label>
+            <span class="field-error" data-fs-error="consentimiento_rgpd"></span>
+
+            <!-- Primera capa de información RGPD -->
+            <div class="form-legal-layer" data-i18n="form-legal-layer">
+              <strong>Responsable:</strong> Zero Drama Food Truck.<br>
+              <strong>Finalidad:</strong> Gestión y respuesta a consultas de disponibilidad y contratación.<br>
+              <strong>Legitimación:</strong> Tu consentimiento explícito al remitir el formulario.<br>
+              <strong>Derechos:</strong> Acceso, rectificación y supresión escribiendo a hola@somoszerodrama.com.
+            </div>
+          </div>
+
           <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.5rem;" data-fs-submit-btn data-i18n="form-submit">
             Enviar Consulta Directa
           </button>
@@ -789,7 +865,7 @@
 
         <div class="form-direct-mail">
           <span data-i18n="form-alt-text">O si lo prefieres, escríbenos directamente a:</span> <br>
-          <a href="mailto:info@somoszerodrama.com">info@somoszerodrama.com</a>
+          <a href="mailto:hola@somoszerodrama.com">hola@somoszerodrama.com</a>
         </div>
       </div>
     </div>
@@ -797,7 +873,11 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container">
+    <div class="container footer-inner">
+      <div class="footer-legal-links">
+        <a href="aviso-legal.html" data-i18n="footer-legal">Aviso Legal</a>
+        <a href="privacidad.html" data-i18n="footer-privacy">Política de Privacidad</a>
+      </div>
       <p data-i18n="footer-text">© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS</p>
     </div>
   </footer>
@@ -862,10 +942,14 @@
         "form-ph-event": "Ej: Festival All Those / Fiesta privada en Girona",
         "form-label-msg": "Detalles y Fechas Previstas",
         "form-ph-msg": "Número de asistentes, fechas o requerimientos del espacio",
+        "form-legal-check": "He leído y acepto la <a href='privacidad.html' target='_blank' style='color: var(--zd-terracotta); text-decoration: underline;'>Política de Privacidad</a>.",
+        "form-legal-layer": "<strong>Responsable:</strong> Zero Drama Food Truck.<br><strong>Finalidad:</strong> Gestión y respuesta a consultas de disponibilidad y contratación.<br><strong>Legitimación:</strong> Tu consentimiento explícito al remitir el formulario.<br><strong>Derechos:</strong> Acceso, rectificación y supresión escribiendo a hola@somoszerodrama.com.",
         "form-submit": "Enviar Consulta Directa",
         "form-msg-success": "¡Solicitud enviada con éxito!",
         "form-msg-sub": "Revisaremos los detalles y te responderemos en menos de 24 horas.",
         "form-alt-text": "O si lo prefieres, escríbenos directamente a:",
+        "footer-legal": "Aviso Legal",
+        "footer-privacy": "Política de Privacidad",
         "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS"
       },
       cat: {
@@ -925,10 +1009,14 @@
         "form-ph-event": "Ex: Festival All Those / Festa privada a Girona",
         "form-label-msg": "Detalls i Dates Previstes",
         "form-ph-msg": "Nombre d'assistents, dates o requeriments de l'espai",
+        "form-legal-check": "He llegit i accepto la <a href='privacidad.html' target='_blank' style='color: var(--zd-terracotta); text-decoration: underline;'>Política de Privacitat</a>.",
+        "form-legal-layer": "<strong>Responsable:</strong> Zero Drama Food Truck.<br><strong>Finalitat:</strong> Gestió i resposta a consultes de disponibilitat i contractació.<br><strong>Legitimació:</strong> El teu consentiment explícit en remetre el formulari.<br><strong>Drets:</strong> Accés, rectificació i supressió escrivint a hola@somoszerodrama.com.",
         "form-submit": "Enviar Consulta Directa",
         "form-msg-success": "Sol·licitud enviada amb èxit!",
         "form-msg-sub": "Revisarem els detalls i et respondrem en menys de 24 hores.",
         "form-alt-text": "O si ho prefereixes, escriu-nos directament a:",
+        "footer-legal": "Avís Legal",
+        "footer-privacy": "Política de Privacitat",
         "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TOTS ELS DRETS RESERVATS"
       },
       en: {
@@ -988,10 +1076,14 @@
         "form-ph-event": "e.g., All Those Food Market / Private Party in Girona",
         "form-label-msg": "Event Details & Planned Dates",
         "form-ph-msg": "Guest count, dates, and venue requirements",
+        "form-legal-check": "I have read and accept the <a href='privacidad.html' target='_blank' style='color: var(--zd-terracotta); text-decoration: underline;'>Privacy Policy</a>.",
+        "form-legal-layer": "<strong>Controller:</strong> Zero Drama Food Truck.<br><strong>Purpose:</strong> Managing and answering event availability inquiries.<br><strong>Legal basis:</strong> Your explicit consent when submitting this form.<br><strong>Rights:</strong> Access, rectification, and erasure via hola@somoszerodrama.com.",
         "form-submit": "Send Direct Inquiry",
         "form-msg-success": "Inquiry sent successfully!",
         "form-msg-sub": "We will review your event details and respond within 24 hours.",
         "form-alt-text": "Or email us directly at:",
+        "footer-legal": "Legal Notice",
+        "footer-privacy": "Privacy Policy",
         "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · ALL RIGHTS RESERVED"
       }
     };
