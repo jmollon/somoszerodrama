@@ -723,14 +723,20 @@
             <path id="arco-sub-2" 
                   d="M 91,500 A 409,409 0 0,0 909,500" 
                   fill="none" />
+            <!-- Mascara de recorte -->
+            <clipPath id="recorte-mascaras">
+                  <circle cx="500" cy="500" r="286" />
+                  </clipPath>
           </defs>
 
           <!-- 1. Capa de fondo: Máscaras (no pisan los círculos) -->
           <image href="mascaras_V2-removebg-preview.png" 
-                 xlink:href="mascaras_V2-removebg-preview.png" 
-                 x="200" y="285" 
-                 width="600" height="430" 
-                 preserveAspectRatio="xMidYMid meet" />
+          xlink:href="mascaras_V2-removebg-preview.png" 
+          x="200" y="285" 
+          width="600" height="430" 
+          clip-path="url(#recorte-mascaras)"
+          style="mix-blend-mode: multiply;"
+          preserveAspectRatio="xMidYMid meet" />
 
           <!-- 2. Capa media: Círculos concéntricos -->
           <circle cx="500" cy="500" r="472" class="anillo-exterior-grueso" />
