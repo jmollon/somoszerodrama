@@ -6,7 +6,7 @@
   <title>Política de Privacidad — Zero Drama Food Truck</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Prata&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Prata&display=swap" rel="stylesheet">
   <style>
     :root {
       --zd-espresso: #1A1817;
@@ -28,8 +28,8 @@
       -webkit-font-smoothing: antialiased;
     }
     header {
-      border-bottom: 1px solid rgba(244, 235, 217, 0.15);
-      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(244, 235, 217, 0.1);
+      padding: 1.25rem 0;
     }
     .container {
       width: 100%;
@@ -42,13 +42,27 @@
       justify-content: space-between;
       align-items: center;
     }
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+    }
     .brand-title {
       font-family: var(--zd-font-display);
-      font-size: 1.25rem;
-      letter-spacing: 0.12em;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--zd-oat-cream);
-      text-decoration: none;
+    }
+    .brand-subtitle {
+      font-family: var(--zd-font-sub);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--zd-terracotta);
+      text-transform: uppercase;
+      margin-top: 3px;
     }
     .back-link {
       font-family: var(--zd-font-sub);
@@ -136,13 +150,13 @@
     }
     td { color: #D3CDC4; }
     footer {
-      border-top: 1px solid rgba(244, 235, 217, 0.15);
+      border-top: 1px solid rgba(244, 235, 217, 0.1);
       padding: 2.5rem 0;
       font-size: 0.75rem;
       color: var(--zd-warm-slate);
       text-align: center;
       font-family: var(--zd-font-sub);
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
     }
     footer a {
       color: var(--zd-oat-cream);
@@ -155,7 +169,10 @@
 
   <header>
     <div class="container nav-inner">
-      <a href="index.html" class="brand-title">Zero Drama</a>
+      <a href="index.html" class="brand-block">
+        <span class="brand-title">ZERO DRAMA</span>
+        <span class="brand-subtitle">· GLUTEN &amp; LACTOSE FREE ·</span>
+      </a>
       <a href="index.html" class="back-link">← Volver a la web</a>
     </div>
   </header>
@@ -172,8 +189,8 @@
         <p style="font-size: 0.85rem; margin-bottom: 0.3rem;"><strong>Responsable:</strong> Zero Drama Food Truck (<em>[NOMBRE O RAZÓN SOCIAL]</em> · <em>[NIF/CIF]</em>).</p>
         <p style="font-size: 0.85rem; margin-bottom: 0.3rem;"><strong>Finalidad:</strong> Atender solicitudes de contacto, presupuesto y reserva de fechas de eventos.</p>
         <p style="font-size: 0.85rem; margin-bottom: 0.3rem;"><strong>Legitimación:</strong> Tu consentimiento expreso al enviar el formulario o correo.</p>
-        <p style="font-size: 0.85rem; margin-bottom: 0.3rem;"><strong>Destinatarios:</strong> Proveedores técnicos indispensables (hosting web y servicio de correo).</p>
-        <p style="font-size: 0.85rem; margin-bottom: 0;"><strong>Derechos:</strong> Acceso, rectificación, supresión y oposición escribiendo a info@somoszerodrama.com.</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0.3rem;"><strong>Destinatarios:</strong> Proveedores técnicos indispensables (Formspree para recepción de mensajes y servidor de alojamiento web).</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0;"><strong>Derechos:</strong> Acceso, rectificación, supresión y oposición escribiendo a hola@somoszerodrama.com.</p>
       </div>
 
       <h2>1. Responsable del Tratamiento</h2>
@@ -194,7 +211,7 @@
             </tr>
             <tr>
               <th>Contacto Electrónico</th>
-              <td>info@somoszerodrama.com</td>
+              <td>hola@somoszerodrama.com</td>
             </tr>
           </tbody>
         </table>
@@ -204,44 +221,44 @@
       <p>Tratamos exclusivamente los datos que nos facilitas voluntariamente a través del formulario de contratación o mediante correo electrónico:</p>
       <ul>
         <li><strong>Datos identificativos y de contacto:</strong> Nombre y apellidos, organización o empresa convocante, y dirección de correo electrónico.</li>
-        <li><strong>Datos relativos al evento:</strong> Tipología de evento, municipio o ubicación física, fechas previstas y requerimientos operativos facilitados en el cuerpo del mensaje.</li>
+        <li><strong>Datos de contacto opcionales:</strong> Teléfono móvil y preferencia de franja horaria.</li>
+        <li><strong>Datos relativos al evento:</strong> Tipología de evento, municipio o localización física, fechas previstas y especificaciones operativas.</li>
       </ul>
 
       <h2>3. Finalidad del Tratamiento</h2>
-      <p>Tus datos son recabados con las siguientes finalidades comerciales legítimas:</p>
+      <p>Tus datos son tratados exclusivamente con las siguientes finalidades legítimas:</p>
       <ul>
         <li>Gestionar y contestar tu consulta técnica o petición de disponibilidad de agenda.</li>
         <li>Elaborar y remitir presupuestos para la participación del food truck en ferias, festivales, bodas o eventos corporativos.</li>
         <li>Mantener las comunicaciones necesarias para coordinar la logística del servicio contratado.</li>
       </ul>
-      <p><em>En ningún caso comercializamos, cedemos a terceros con fines publicitarios ni enviamos boletines no solicitados (spam).</em></p>
+      <p><em>En ningún caso comercializamos, cedemos a terceros con fines comerciales ni enviamos publicidad no solicitada (spam).</em></p>
 
       <h2>4. Base Jurídica (Legitimación)</h2>
-      <p>La base legal para el tratamiento de tus datos es tu <strong>consentimiento inequívoco</strong> (Art. 6.1.a del RGPD), otorgado al marcar la casilla de aceptación de esta política y remitir tu mensaje de contacto.</p>
+      <p>La base legal para el tratamiento de tus datos es tu <strong>consentimiento inequívoco</strong> (Art. 6.1.a del RGPD), manifestado al marcar la casilla de aceptación y enviar el formulario de contacto.</p>
 
       <h2>5. Plazo de Conservación de los Datos</h2>
-      <p>Los datos facilitados se conservarán mientras dure la gestión de la solicitud y, en caso de formalizarse la contratación, durante los plazos legalmente exigibles por la normativa fiscal y contable española (mínimo de 4 a 5 años). Si la consulta no deriva en un encargo, los datos se eliminarán periódicamente.</p>
+      <p>Los datos facilitados se conservarán durante el tiempo imprescindible para atender y resolver la solicitud. En caso de concretarse una relación contractual, se conservarán durante los plazos legalmente exigibles por la normativa fiscal y contable española (mínimo de 4 a 5 años).</p>
 
       <h2>6. Destinatarios y Proveedores de Servicios</h2>
-      <p>Los datos no se comunicarán a terceros ajenos salvo obligación legal expresa. Para prestar el servicio técnico del sitio web, recurrimos a los siguientes encargados de tratamiento:</p>
+      <p>No se cederán datos a terceros salvo obligación legal. Para la operativa del sitio web, se emplean los siguientes encargados de tratamiento:</p>
       <ul>
-        <li><strong>Alojamiento Web:</strong> Servidores estáticos protegidos con cifrado SSL/TLS (GitHub Pages / Cloudflare).</li>
-        <li><strong>Gestión de Correo:</strong> Proveedor del servidor de correo asociado al dominio somoszerodrama.com.</li>
+        <li><strong>Procesamiento del Formulario:</strong> Formspree Inc., que procesa el envío seguro mediante cifrado HTTPS bajo cláusulas contractuales tipo RGPD.</li>
+        <li><strong>Alojamiento Web:</strong> Servidores estáticos protegidos con cifrado SSL/TLS.</li>
       </ul>
 
       <h2>7. Derechos del Usuario (ARCO-POL)</h2>
-      <p>El RGPD y la LOPDGDD te otorgan los siguientes derechos sobre tus datos:</p>
+      <p>De conformidad con la normativa vigente, tienes derecho a:</p>
       <ul>
-        <li><strong>Acceso:</strong> Conocer qué datos tuyos estamos tratando.</li>
+        <li><strong>Acceso:</strong> Solicitar confirmación de si tratamos tus datos personales.</li>
         <li><strong>Rectificación:</strong> Modificar los datos inexactos o incompletos.</li>
-        <li><strong>Supresión:</strong> Solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
-        <li><strong>Oposición y Limitación:</strong> Oponerte al tratamiento o solicitar la limitación del mismo.</li>
-        <li><strong>Portabilidad:</strong> Solicitar la entrega de tus datos en un formato digital estructurado.</li>
+        <li><strong>Supresión:</strong> Solicitar la eliminación de tus datos cuando ya no sean pertinentes.</li>
+        <li><strong>Oposición y Limitación:</strong> Solicitar la limitación de su tratamiento en determinadas circunstancias.</li>
       </ul>
-      <p>Puedes ejercer cualquiera de estos derechos enviando una solicitud motivada por escrito a <strong>info@somoszerodrama.com</strong> adjuntando copia de tu documento de identidad para verificar la titularidad. Asimismo, tienes derecho a presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" style="color: var(--zd-terracotta); text-decoration: underline;">Agencia Española de Protección de Datos (AEPD)</a> si consideras que tus derechos han sido vulnerados.</p>
+      <p>Puedes ejercer estos derechos remitiendo un correo electrónico a <strong>hola@somoszerodrama.com</strong> acreditando tu identidad. Asimismo, puedes acudir a la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" style="color: var(--zd-terracotta); text-decoration: underline;">Agencia Española de Protección de Datos (AEPD)</a> si consideras que tus derechos han sido desatendidos.</p>
 
-      <h2>8. Política de Cookies y Tecnologías de Rastreo</h2>
-      <p>Este sitio web está construido como una página estática minimalista. <strong>No utiliza cookies publicitarias, ni píxeles de seguimiento de redes sociales ni herramientas de perfilado invasivas.</strong> Únicamente se emplean las cookies técnicas indispensables para el funcionamiento y entrega segura de la web a través de la red.</p>
+      <h2>8. Política de Cookies</h2>
+      <p>Este sitio web utiliza una arquitectura puramente estática. <strong>No emplea cookies de rastreo publicitario ni herramientas analíticas intrusivas de terceros.</strong> Se limita exclusivamente a cookies técnicas imprescindibles para la entrega segura y eficiente del contenido a través de la red.</p>
     </div>
   </main>
 
