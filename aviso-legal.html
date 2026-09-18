@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviso Legal — Zero Drama Food Truck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Prata&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --zd-espresso: #1A1817;
+      --zd-terracotta: #C85A32;
+      --zd-oat-cream: #F4EBD9;
+      --zd-charcoal: #2B2D2F;
+      --zd-warm-slate: #7A7875;
+      --zd-font-display: 'Prata', Georgia, serif;
+      --zd-font-sub: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --zd-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --zd-radius-sm: 4px;
+      --zd-radius-md: 8px;
+      --zd-transition: 0.2s ease-in-out;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--zd-espresso);
+      color: var(--zd-oat-cream);
+      font-family: var(--zd-font-body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(244, 235, 217, 0.1);
+      padding: 1.25rem 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+    }
+
+    .brand-title {
+      font-family: var(--zd-font-display);
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--zd-oat-cream);
+    }
+
+    .brand-subtitle {
+      font-family: var(--zd-font-sub);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--zd-terracotta);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(244, 235, 217, 0.05);
+      border: 1px solid rgba(244, 235, 217, 0.2);
+      border-radius: var(--zd-radius-sm);
+      padding: 2px 4px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--zd-warm-slate);
+      font-family: var(--zd-font-sub);
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      padding: 3px 6px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: color var(--zd-transition), background var(--zd-transition);
+    }
+
+    .lang-btn:hover {
+      color: var(--zd-oat-cream);
+    }
+
+    .lang-btn.active {
+      color: var(--zd-espresso);
+      background-color: var(--zd-oat-cream);
+    }
+
+    .back-link {
+      font-family: var(--zd-font-sub);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--zd-terracotta);
+      text-decoration: none;
+      transition: opacity var(--zd-transition);
+      white-space: nowrap;
+    }
+
+    .back-link:hover { opacity: 0.8; }
+
+    main {
+      padding: 3.5rem 0 5rem;
+    }
+
+    .descriptor {
+      font-family: var(--zd-font-sub);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--zd-terracotta);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: var(--zd-font-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: var(--zd-oat-cream);
+    }
+
+    h2 {
+      font-family: var(--zd-font-display);
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 2.5rem 0 1rem;
+      color: var(--zd-oat-cream);
+      border-bottom: 1px solid rgba(244, 235, 217, 0.1);
+      padding-bottom: 0.4rem;
+    }
+
+    p {
+      color: #D3CDC4;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .table-wrapper {
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border: 1px solid rgba(244, 235, 217, 0.15);
+    }
+
+    th {
+      background-color: rgba(244, 235, 217, 0.05);
+      font-family: var(--zd-font-sub);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--zd-oat-cream);
+      width: 32%;
+    }
+
+    td { color: #D3CDC4; }
+
+    footer {
+      border-top: 1px solid rgba(244, 235, 217, 0.1);
+      padding: 2.5rem 0;
+      font-size: 0.75rem;
+      color: var(--zd-warm-slate);
+      text-align: center;
+      font-family: var(--zd-font-sub);
+      letter-spacing: 0.08em;
+    }
+
+    footer a {
+      color: var(--zd-oat-cream);
+      text-decoration: underline;
+      margin: 0 0.8rem;
+      transition: color var(--zd-transition);
+    }
+
+    footer a:hover {
+      color: var(--zd-terracotta);
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .nav-right { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-block">
+        <span class="brand-title">ZERO DRAMA</span>
+        <span class="brand-subtitle">· GLUTEN &amp; LACTOSE FREE ·</span>
+      </a>
+
+      <div class="nav-right">
+        <div class="lang-switcher" aria-label="Selector de idioma">
+          <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+          <button class="lang-btn" onclick="setLanguage('cat')">CAT</button>
+          <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        </div>
+        <a href="index.html" class="back-link" data-i18n="back-link">← Volver a la web</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <span class="descriptor" data-i18n="legal-descriptor">Información Legal y Titularidad</span>
+      <h1 data-i18n="legal-title">Aviso Legal</h1>
+
+      <p data-i18n="legal-intro">En cumplimiento de lo dispuesto en el artículo 10 de la <strong>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE)</strong>, se ponen a disposición de los usuarios y autoridades los datos identificativos del responsable y titular de este sitio web:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <tbody>
+            <tr>
+              <th data-i18n="th-owner">Titular del Proyecto</th>
+              <td>Zero Drama Food Truck (<em>[NOMBRE COMPLETO DEL TITULAR O RAZÓN SOCIAL]</em>)</td>
+            </tr>
+            <tr>
+              <th data-i18n="th-taxid">NIF / CIF</th>
+              <td><em>[COMPLETAR CON NIF / CIF]</em></td>
+            </tr>
+            <tr>
+              <th data-i18n="th-address">Domicilio de Actividad</th>
+              <td><em>[DIRECCIÓN POSTAL COMPLETA / MUNICIPIO, CATALUÑA]</em></td>
+            </tr>
+            <tr>
+              <th data-i18n="th-email">Email de Contacto</th>
+              <td><a href="mailto:hola@somoszerodrama.com" style="color: var(--zd-terracotta); text-decoration: underline;">hola@somoszerodrama.com</a></td>
+            </tr>
+            <tr>
+              <th data-i18n="th-domain">Dominio Principal</th>
+              <td>https://somoszerodrama.com</td>
+            </tr>
+            <tr>
+              <th data-i18n="th-activity">Actividad Sanitaria</th>
+              <td data-i18n="td-activity">Elaboración y venta ambulante de productos alimenticios (código de remolque homologado 4048 y Registro Sanitario de Cataluña en trámite).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 data-i18n="sec1-title">1. Objeto y Ámbito de Aplicación</h2>
+      <p data-i18n="sec1-p1">El presente documento regula el acceso y navegación por el sitio web comercial <strong>somoszerodrama.com</strong>, cuyo objeto es informar sobre los servicios de street food itinerante, propuesta gastronómica 100% libre de gluten y sin lactosa, y facilitar un canal de reserva y contratación directa para festivales, ferias y eventos privados o de empresa.</p>
+      <p data-i18n="sec1-p2">La navegación por el sitio atribuye la condición de usuario e implica la aceptación plena de todas las disposiciones incluidas en este Aviso Legal.</p>
+
+      <h2 data-i18n="sec2-title">2. Condiciones de Uso y Responsabilidad</h2>
+      <p data-i18n="sec2-p1">El usuario se compromete a hacer un uso adecuado y lícito del sitio web y de sus contenidos. Queda terminantemente prohibido el uso del sitio con fines lesivos para los derechos o intereses del titular de Zero Drama o de terceros, o que de cualquier forma sobrecarguen o impidan la normal utilización del servidor o infraestructura técnica.</p>
+      <p data-i18n="sec2-p2">Zero Drama no se responsabiliza de los daños o perjuicios que pudieran derivarse de interferencias, omisiones, interrupciones o averías telefónicas o desconexiones en el funcionamiento operativo de este sistema electrónico motivadas por causas ajenas a su control.</p>
+
+      <h2 data-i18n="sec3-title">3. Propiedad Intelectual e Industrial</h2>
+      <p data-i18n="sec3-p1">Todos los elementos que forman el sitio web (diseño gráfico, logotipos, sellos vectoriales SVG, máscaras teatrales, paleta de colores, código fuente y textos descriptivos) son titularidad de Zero Drama o dispone de la debida autorización para su uso.</p>
+      <p data-i18n="sec3-p2">Queda expresamente prohibida la reproducción, distribución o comunicación pública total o parcial de los contenidos de esta web sin la autorización previa y por escrito del titular.</p>
+
+      <h2 data-i18n="sec4-title">4. Enlaces Externos (Links)</h2>
+      <p data-i18n="sec4-p1">En caso de que en somoszerodrama.com se dispongan enlaces hacia otros portales de Internet, Zero Drama no ejercerá ningún tipo de control sobre dichos sitios ni asumirá responsabilidad por los contenidos ni por las políticas de privacidad de los mismos.</p>
+
+      <h2 data-i18n="sec5-title">5. Legislación Aplicable y Jurisdicción</h2>
+      <p data-i18n="sec5-p1">Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, sometiéndose las partes expresamente a la competencia de los Juzgados y Tribunales de la provincia del domicilio del titular.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 0.8rem;">
+        <a href="aviso-legal.html" data-i18n="footer-legal">Aviso Legal</a> · 
+        <a href="privacidad.html" data-i18n="footer-privacy">Política de Privacidad</a>
+      </p>
+      <p data-i18n="footer-text">© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      es: {
+        "back-link": "← Volver a la web",
+        "legal-descriptor": "Información Legal y Titularidad",
+        "legal-title": "Aviso Legal",
+        "legal-intro": "En cumplimiento de lo dispuesto en el artículo 10 de la <strong>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE)</strong>, se ponen a disposición de los usuarios y autoridades los datos identificativos del responsable y titular de este sitio web:",
+        "th-owner": "Titular del Proyecto",
+        "th-taxid": "NIF / CIF",
+        "th-address": "Domicilio de Actividad",
+        "th-email": "Email de Contacto",
+        "th-domain": "Dominio Principal",
+        "th-activity": "Actividad Sanitaria",
+        "td-activity": "Elaboración y venta ambulante de productos alimenticios (código de remolque homologado 4048 y Registro Sanitario de Cataluña en trámite).",
+        "sec1-title": "1. Objeto y Ámbito de Aplicación",
+        "sec1-p1": "El presente documento regula el acceso y navegación por el sitio web comercial <strong>somoszerodrama.com</strong>, cuyo objeto es informar sobre los servicios de street food itinerante, propuesta gastronómica 100% libre de gluten y sin lactosa, y facilitar un canal de reserva y contratación directa para festivales, ferias y eventos privados o de empresa.",
+        "sec1-p2": "La navegación por el sitio atribuye la condición de usuario e implica la aceptación plena de todas las disposiciones incluidas en este Aviso Legal.",
+        "sec2-title": "2. Condiciones de Uso y Responsabilidad",
+        "sec2-p1": "El usuario se compromete a hacer un uso adecuado y lícito del sitio web y de sus contenidos. Queda terminantemente prohibido el uso del sitio con fines lesivos para los derechos o intereses del titular de Zero Drama o de terceros, o que de cualquier forma sobrecarguen o impidan la normal utilización del servidor o infraestructura técnica.",
+        "sec2-p2": "Zero Drama no se responsabiliza de los daños o perjuicios que pudieran derivarse de interferencias, omisiones, interrupciones o averías telefónicas o desconexiones en el funcionamiento operativo de este sistema electrónico motivadas por causas ajenas a su control.",
+        "sec3-title": "3. Propiedad Intelectual e Industrial",
+        "sec3-p1": "Todos los elementos que forman el sitio web (diseño gráfico, logotipos, sellos vectoriales SVG, máscaras teatrales, paleta de colores, código fuente y textos descriptivos) son titularidad de Zero Drama o dispone de la debida autorización para su uso.",
+        "sec3-p2": "Queda expresamente prohibida la reproducción, distribución o comunicación pública total o parcial de los contenidos de esta web sin la autorización previa y por escrito del titular.",
+        "sec4-title": "4. Enlaces Externos (Links)",
+        "sec4-p1": "En caso de que en somoszerodrama.com se dispongan enlaces hacia otros portales de Internet, Zero Drama no ejercerá ningún tipo de control sobre dichos sitios ni asumirá responsabilidad por los contenidos ni por las políticas de privacidad de los mismos.",
+        "sec5-title": "5. Legislación Aplicable y Jurisdicción",
+        "sec5-p1": "Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, sometiéndose las partes expresamente a la competencia de los Juzgados y Tribunales de la provincia del domicilio del titular.",
+        "footer-legal": "Aviso Legal",
+        "footer-privacy": "Política de Privacidad",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS"
+      },
+      cat: {
+        "back-link": "← Tornar al web",
+        "legal-descriptor": "Informació Legal i Titularitat",
+        "legal-title": "Avís Legal",
+        "legal-intro": "En compliment del que disposa l'article 10 de la <strong>Llei 34/2002, d'11 de juliol, de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSI-CE)</strong>, es posen a disposició dels usuaris i autoritats les dades identificatives del responsable i titular d'aquest lloc web:",
+        "th-owner": "Titular del Projecte",
+        "th-taxid": "NIF / CIF",
+        "th-address": "Domicili d'Activitat",
+        "th-email": "Email de Contacte",
+        "th-domain": "Domini Principal",
+        "th-activity": "Activitat Sanitària",
+        "td-activity": "Elaboració i venda ambulant de productes alimentaris (codi de remolc homologat 4048 i Registre Sanitari de Catalunya en tràmit).",
+        "sec1-title": "1. Objecte i Àmbit d'Aplicació",
+        "sec1-p1": "Aquest document regula l'accés i navegació pel lloc web comercial <strong>somoszerodrama.com</strong>, l'objecte del qual és informar sobre els serveis de street food itinerant, proposta gastronòmica 100% lliure de gluten i sense lactosa, i facilitar un canal de reserva i contractació directa per a festivals, fires i esdeveniments privats o corporatius.",
+        "sec1-p2": "La navegació pel lloc atribueix la condició d'usuari i implica l'acceptació plena de totes les disposicions incloses en aquest Avís Legal.",
+        "sec2-title": "2. Condicions d'Ús i Responsabilitat",
+        "sec2-p1": "L'usuari es compromet a fer un ús adequat i lícit del lloc web i dels seus continguts. Queda terminantment prohibit l'ús del lloc amb finalitats lesives per als drets o interessos del titular de Zero Drama o de tercers, o que de qualsevol forma sobrecarreguin o impedeixin la normal utilització del servidor o infraestructura tècnica.",
+        "sec2-p2": "Zero Drama no es responsabilitza dels danys o perjudicis que es puguin derivar d'interferències, omissions, interrupcions o avaries telefòniques o desconnexions en el funcionament operatiu d'aquest sistema electrònic motivades per causes alienes al seu control.",
+        "sec3-title": "3. Propietat Intel·lectual i Industrial",
+        "sec3-p1": "Tots els elements que formen el lloc web (disseny gràfic, logotips, segells vectorials SVG, màscares teatrals, paleta de colors, codi font i textos descriptius) són titularitat de Zero Drama o disposa de la deguda autorització per al seu ús.",
+        "sec3-p2": "Queda expressament prohibida la reproducció, distribució o comunicació pública total o parcial dels continguts d'aquesta web sense l'autorització prèvia i per escrit del titular.",
+        "sec4-title": "4. Enllaços Externs (Links)",
+        "sec4-p1": "En cas que a somoszerodrama.com es disposin enllaços cap a altres portals d'Internet, Zero Drama no exercirà cap tipus de control sobre aquests llocs ni assumirà responsabilitat pels continguts ni per les polítiques de privacitat dels mateixos.",
+        "sec5-title": "5. Legislació Aplicable i Jurisdicció",
+        "sec5-p1": "Per a la resolució de totes les controvèrsies o qüestions relacionades amb aquest lloc web o de les activitats que s'hi desenvolupen, serà d'aplicació la legislació espanyola, sotmetent-se les parts expressament a la competència dels Jutjats i Tribunals de la província del domicili del titular.",
+        "footer-legal": "Avís Legal",
+        "footer-privacy": "Política de Privacitat",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TOTS ELS DRETS RESERVATS"
+      },
+      en: {
+        "back-link": "← Back to website",
+        "legal-descriptor": "Legal Notice & Ownership",
+        "legal-title": "Legal Notice",
+        "legal-intro": "In compliance with Article 10 of <strong>Spanish Law 34/2002 (LSSI-CE)</strong>, the identification details of the owner and operator of this website are made available to users and competent authorities:",
+        "th-owner": "Project Owner",
+        "th-taxid": "Tax ID / VAT",
+        "th-address": "Registered Address",
+        "th-email": "Contact Email",
+        "th-domain": "Main Domain",
+        "th-activity": "Sanitary Activity",
+        "td-activity": "Preparation and street food sales (homologated trailer code 4048 and sanitary registration in Catalonia pending).",
+        "sec1-title": "1. Purpose & Scope",
+        "sec1-p1": "This document governs access to and navigation on the commercial website <strong>somoszerodrama.com</strong>, which aims to provide information regarding mobile street food services, a 100% gluten-free and lactose-free gastronomic offering, and a booking channel for festivals, fairs, and private or corporate events.",
+        "sec1-p2": "Navigating this site attributes user status and implies full acceptance of all terms contained in this Legal Notice.",
+        "sec2-title": "2. Terms of Use & Liability",
+        "sec2-p1": "The user agrees to make fair and lawful use of the website and its contents. Any use detrimental to the rights or interests of Zero Drama or third parties, or that disrupts the normal operation of technical servers, is strictly prohibited.",
+        "sec2-p2": "Zero Drama is not liable for damages resulting from interference, omissions, service interruptions, or telephone network failures beyond its control.",
+        "sec3-title": "3. Intellectual & Industrial Property",
+        "sec3-p1": "All elements comprising this website (graphic design, logos, SVG vector stamps, theatrical masks, color system, source code, and descriptive copy) are the property of Zero Drama or licensed for its use.",
+        "sec3-p2": "Total or partial reproduction, distribution, or public transmission of these contents without prior written consent from the owner is prohibited.",
+        "sec4-title": "4. External Links",
+        "sec4-p1": "Should somoszerodrama.com provide links to third-party portals, Zero Drama exerts no editorial control over them and accepts no responsibility for their content or privacy policies.",
+        "sec5-title": "5. Governing Law & Jurisdiction",
+        "sec5-p1": "All disputes arising from or related to this website shall be governed by Spanish law, with both parties submitting to the courts of the registered jurisdiction of the owner.",
+        "footer-legal": "Legal Notice",
+        "footer-privacy": "Privacy Policy",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · ALL RIGHTS RESERVED"
+      }
+    };
+
+    function setLanguage(lang) {
+      if (!translations[lang]) lang = 'en';
+      document.documentElement.lang = lang === 'cat' ? 'ca' : lang;
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('zd_lang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('zd_lang');
+      if (savedLang && translations[savedLang]) {
+        setLanguage(savedLang);
+        return;
+      }
+
+      const userLangs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+      let detected = 'en';
+
+      for (const l of userLangs) {
+        const primary = l.toLowerCase().split('-')[0];
+        if (primary === 'ca') {
+          detected = 'cat';
+          break;
+        } else if (primary === 'es') {
+          detected = 'es';
+          break;
+        }
+      }
+
+      setLanguage(detected);
+    });
+  </script>
+
+</body>
+</html>
