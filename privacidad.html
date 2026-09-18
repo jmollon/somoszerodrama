@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — Zero Drama Food Truck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&family=Prata&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --zd-espresso: #1A1817;
+      --zd-terracotta: #C85A32;
+      --zd-oat-cream: #F4EBD9;
+      --zd-charcoal: #2B2D2F;
+      --zd-warm-slate: #7A7875;
+      --zd-font-display: 'Prata', Georgia, serif;
+      --zd-font-sub: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      --zd-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --zd-radius-sm: 4px;
+      --zd-radius-md: 8px;
+      --zd-transition: 0.2s ease-in-out;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--zd-espresso);
+      color: var(--zd-oat-cream);
+      font-family: var(--zd-font-body);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(244, 235, 217, 0.1);
+      padding: 1.25rem 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+    }
+
+    .brand-title {
+      font-family: var(--zd-font-display);
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--zd-oat-cream);
+    }
+
+    .brand-subtitle {
+      font-family: var(--zd-font-sub);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--zd-terracotta);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(244, 235, 217, 0.05);
+      border: 1px solid rgba(244, 235, 217, 0.2);
+      border-radius: var(--zd-radius-sm);
+      padding: 2px 4px;
+      gap: 2px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--zd-warm-slate);
+      font-family: var(--zd-font-sub);
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      padding: 3px 6px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: color var(--zd-transition), background var(--zd-transition);
+    }
+
+    .lang-btn:hover {
+      color: var(--zd-oat-cream);
+    }
+
+    .lang-btn.active {
+      color: var(--zd-espresso);
+      background-color: var(--zd-oat-cream);
+    }
+
+    .back-link {
+      font-family: var(--zd-font-sub);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--zd-terracotta);
+      text-decoration: none;
+      transition: opacity var(--zd-transition);
+      white-space: nowrap;
+    }
+
+    .back-link:hover { opacity: 0.8; }
+
+    main {
+      padding: 3.5rem 0 5rem;
+    }
+
+    .descriptor {
+      font-family: var(--zd-font-sub);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--zd-terracotta);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: var(--zd-font-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: var(--zd-oat-cream);
+    }
+
+    h2 {
+      font-family: var(--zd-font-display);
+      font-size: 1.35rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 2.5rem 0 1rem;
+      color: var(--zd-oat-cream);
+      border-bottom: 1px solid rgba(244, 235, 217, 0.1);
+      padding-bottom: 0.4rem;
+    }
+
+    p {
+      color: #D3CDC4;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin: 0 0 1.5rem 1.4rem;
+      color: #D3CDC4;
+      font-size: 0.95rem;
+    }
+
+    li { margin-bottom: 0.5rem; }
+
+    .highlight-card {
+      background-color: rgba(244, 235, 217, 0.05);
+      border-left: 3px solid var(--zd-terracotta);
+      padding: 1.2rem 1.5rem;
+      border-radius: var(--zd-radius-md);
+      margin: 1.8rem 0;
+    }
+
+    .table-wrapper {
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border: 1px solid rgba(244, 235, 217, 0.15);
+    }
+
+    th {
+      background-color: rgba(244, 235, 217, 0.05);
+      font-family: var(--zd-font-sub);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--zd-oat-cream);
+      width: 30%;
+    }
+
+    td { color: #D3CDC4; }
+
+    footer {
+      border-top: 1px solid rgba(244, 235, 217, 0.1);
+      padding: 2.5rem 0;
+      font-size: 0.75rem;
+      color: var(--zd-warm-slate);
+      text-align: center;
+      font-family: var(--zd-font-sub);
+      letter-spacing: 0.08em;
+    }
+
+    footer a {
+      color: var(--zd-oat-cream);
+      text-decoration: underline;
+      margin: 0 0.8rem;
+      transition: color var(--zd-transition);
+    }
+
+    footer a:hover {
+      color: var(--zd-terracotta);
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .nav-right { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-inner">
+      <a href="index.html" class="brand-block">
+        <span class="brand-title">ZERO DRAMA</span>
+        <span class="brand-subtitle">· GLUTEN &amp; LACTOSE FREE ·</span>
+      </a>
+
+      <div class="nav-right">
+        <div class="lang-switcher" aria-label="Selector de idioma">
+          <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+          <button class="lang-btn" onclick="setLanguage('cat')">CAT</button>
+          <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        </div>
+        <a href="index.html" class="back-link" data-i18n="back-link">← Volver a la web</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <span class="descriptor" data-i18n="priv-descriptor">Protección de Datos · RGPD &amp; LOPDGDD</span>
+      <h1 data-i18n="priv-title">Política de Privacidad</h1>
+
+      <p data-i18n="priv-intro">En <strong>Zero Drama Food Truck</strong> nos tomamos la protección de tus datos con el mismo rigor que la seguridad alimentaria de nuestros platos. La presente Política de Privacidad regula el tratamiento de los datos recabados a través de <strong>somoszerodrama.com</strong> de conformidad con el <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>.</p>
+
+      <div class="highlight-card">
+        <h3 style="font-family: var(--zd-font-sub); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--zd-terracotta); margin-bottom: 0.5rem;" data-i18n="card-summary-title">Resumen Informativo Básico</h3>
+        <p style="font-size: 0.85rem; margin-bottom: 0.3rem;" data-i18n="card-summary-p1"><strong>Responsable:</strong> Zero Drama Food Truck (<em>[NOMBRE O RAZÓN SOCIAL]</em> · <em>[NIF/CIF]</em>).</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0.3rem;" data-i18n="card-summary-p2"><strong>Finalidad:</strong> Atender solicitudes de contacto, presupuesto y reserva de fechas de eventos.</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0.3rem;" data-i18n="card-summary-p3"><strong>Legitimación:</strong> Tu consentimiento expreso al enviar el formulario o correo.</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0.3rem;" data-i18n="card-summary-p4"><strong>Destinatarios:</strong> Proveedores técnicos indispensables (Formspree para recepción de mensajes y servidor de alojamiento web).</p>
+        <p style="font-size: 0.85rem; margin-bottom: 0;" data-i18n="card-summary-p5"><strong>Derechos:</strong> Acceso, rectificación, supresión y oposición escribiendo a <a href="mailto:hola@somoszerodrama.com" style="color: var(--zd-terracotta); text-decoration: underline;">hola@somoszerodrama.com</a>.</p>
+      </div>
+
+      <h2 data-i18n="sec1-title">1. Responsable del Tratamiento</h2>
+      <div class="table-wrapper">
+        <table>
+          <tbody>
+            <tr>
+              <th data-i18n="th-identity">Identidad</th>
+              <td>Zero Drama Food Truck (<em>[NOMBRE COMPLETO O DENOMINACIÓN SOCIAL]</em>)</td>
+            </tr>
+            <tr>
+              <th data-i18n="th-taxid">NIF / CIF</th>
+              <td><em>[NIF O CIF DEL RESPONSABLE]</em></td>
+            </tr>
+            <tr>
+              <th data-i18n="th-address">Dirección Postal</th>
+              <td><em>[DIRECCIÓN FISCAL O COMERCIAL]</em></td>
+            </tr>
+            <tr>
+              <th data-i18n="th-email">Contacto Electrónico</th>
+              <td><a href="mailto:hola@somoszerodrama.com" style="color: var(--zd-terracotta); text-decoration: underline;">hola@somoszerodrama.com</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 data-i18n="sec2-title">2. Datos Personales que Recopilamos</h2>
+      <p data-i18n="sec2-intro">Tratamos exclusivamente los datos que nos facilitas voluntariamente a través del formulario de contratación o mediante correo electrónico:</p>
+      <ul>
+        <li data-i18n="sec2-li1"><strong>Datos identificativos y de contacto:</strong> Nombre y apellidos, organización o empresa convocante, y dirección de correo electrónico.</li>
+        <li data-i18n="sec2-li2"><strong>Datos de contacto opcionales:</strong> Teléfono móvil y preferencia de franja horaria.</li>
+        <li data-i18n="sec2-li3"><strong>Datos relativos al evento:</strong> Tipología de evento, municipio o localización física, fechas previstas y especificaciones operativas.</li>
+      </ul>
+
+      <h2 data-i18n="sec3-title">3. Finalidad del Tratamiento</h2>
+      <p data-i18n="sec3-intro">Tus datos son tratados exclusivamente con las siguientes finalidades legítimas:</p>
+      <ul>
+        <li data-i18n="sec3-li1">Gestionar y contestar tu consulta técnica o petición de disponibilidad de agenda.</li>
+        <li data-i18n="sec3-li2">Elaborar y remitir presupuestos para la participación del food truck en ferias, festivales, bodas o eventos corporativos.</li>
+        <li data-i18n="sec3-li3">Mantener las comunicaciones necesarias para coordinar la logística del servicio contratado.</li>
+      </ul>
+      <p><em data-i18n="sec3-note">En ningún caso comercializamos, cedemos a terceros con fines comerciales ni enviamos publicidad no solicitada (spam).</em></p>
+
+      <h2 data-i18n="sec4-title">4. Base Jurídica (Legitimación)</h2>
+      <p data-i18n="sec4-p1">La base legal para el tratamiento de tus datos es tu <strong>consentimiento inequívoco</strong> (Art. 6.1.a del RGPD), manifestado al marcar la casilla de aceptación y enviar el formulario de contacto.</p>
+
+      <h2 data-i18n="sec5-title">5. Plazo de Conservación de los Datos</h2>
+      <p data-i18n="sec5-p1">Los datos facilitados se conservarán durante el tiempo imprescindible para atender y resolver la solicitud. En caso de concretarse una relación contractual, se conservarán durante los plazos legalmente exigibles por la normativa fiscal y contable española (mínimo de 4 a 5 años).</p>
+
+      <h2 data-i18n="sec6-title">6. Destinatarios y Proveedores de Servicios</h2>
+      <p data-i18n="sec6-intro">No se cederán datos a terceros salvo obligación legal. Para la operativa del sitio web, se emplean los siguientes encargados de tratamiento:</p>
+      <ul>
+        <li data-i18n="sec6-li1"><strong>Procesamiento del Formulario:</strong> Formspree Inc., que procesa el envío seguro mediante cifrado HTTPS bajo cláusulas contractuales tipo RGPD.</li>
+        <li data-i18n="sec6-li2"><strong>Alojamiento Web:</strong> Servidores estáticos protegidos con cifrado SSL/TLS.</li>
+      </ul>
+
+      <h2 data-i18n="sec7-title">7. Derechos del Usuario (ARCO-POL)</h2>
+      <p data-i18n="sec7-intro">De conformidad con la normativa vigente, tienes derecho a:</p>
+      <ul>
+        <li data-i18n="sec7-li1"><strong>Acceso:</strong> Solicitar confirmación de si tratamos tus datos personales.</li>
+        <li data-i18n="sec7-li2"><strong>Rectificación:</strong> Modificar los datos inexactos o incompletos.</li>
+        <li data-i18n="sec7-li3"><strong>Supresión:</strong> Solicitar la eliminación de tus datos cuando ya no sean pertinentes.</li>
+        <li data-i18n="sec7-li4"><strong>Oposición y Limitación:</strong> Solicitar la limitación de su tratamiento en determinadas circunstancias.</li>
+      </ul>
+      <p data-i18n="sec7-p2">Puedes ejercer estos derechos remitiendo un correo electrónico a <strong>hola@somoszerodrama.com</strong> acreditando tu identidad. Asimismo, puedes acudir a la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" style="color: var(--zd-terracotta); text-decoration: underline;">Agencia Española de Protección de Datos (AEPD)</a> si consideras que tus derechos han sido desatendidos.</p>
+
+      <h2 data-i18n="sec8-title">8. Política de Cookies</h2>
+      <p data-i18n="sec8-p1">Este sitio web utiliza una arquitectura puramente estática. <strong>No emplea cookies de rastreo publicitario ni herramientas analíticas intrusivas de terceros.</strong> Se limita exclusivamente a cookies técnicas imprescindibles para la entrega segura y eficiente del contenido a través de la red.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 0.8rem;">
+        <a href="aviso-legal.html" data-i18n="footer-legal">Aviso Legal</a> · 
+        <a href="privacidad.html" data-i18n="footer-privacy">Política de Privacidad</a>
+      </p>
+      <p data-i18n="footer-text">© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      es: {
+        "back-link": "← Volver a la web",
+        "priv-descriptor": "Protección de Datos · RGPD &amp; LOPDGDD",
+        "priv-title": "Política de Privacidad",
+        "priv-intro": "En <strong>Zero Drama Food Truck</strong> nos tomamos la protección de tus datos con el mismo rigor que la seguridad alimentaria de nuestros platos. La presente Política de Privacidad regula el tratamiento de los datos recabados a través de <strong>somoszerodrama.com</strong> de conformidad con el <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la <strong>Ley Orgánica 3/2018 (LOPDGDD)</strong>.",
+        "card-summary-title": "Resumen Informativo Básico",
+        "card-summary-p1": "<strong>Responsable:</strong> Zero Drama Food Truck (<em>[NOMBRE O RAZÓN SOCIAL]</em> · <em>[NIF/CIF]</em>).",
+        "card-summary-p2": "<strong>Finalidad:</strong> Atender solicitudes de contacto, presupuesto y reserva de fechas de eventos.",
+        "card-summary-p3": "<strong>Legitimación:</strong> Tu consentimiento expreso al enviar el formulario o correo.",
+        "card-summary-p4": "<strong>Destinatarios:</strong> Proveedores técnicos indispensables (Formspree para recepción de mensajes y servidor de alojamiento web).",
+        "card-summary-p5": "<strong>Derechos:</strong> Acceso, rectificación, supresión y oposición escribiendo a <a href='mailto:hola@somoszerodrama.com' style='color: var(--zd-terracotta); text-decoration: underline;'>hola@somoszerodrama.com</a>.",
+        "sec1-title": "1. Responsable del Tratamiento",
+        "th-identity": "Identidad",
+        "th-taxid": "NIF / CIF",
+        "th-address": "Dirección Postal",
+        "th-email": "Contacto Electrónico",
+        "sec2-title": "2. Datos Personales que Recopilamos",
+        "sec2-intro": "Tratamos exclusivamente los datos que nos facilitas voluntariamente a través del formulario de contratación o mediante correo electrónico:",
+        "sec2-li1": "<strong>Datos identificativos y de contacto:</strong> Nombre y apellidos, organización o empresa convocante, y dirección de correo electrónico.",
+        "sec2-li2": "<strong>Datos de contacto opcionales:</strong> Teléfono móvil y preferencia de franja horaria.",
+        "sec2-li3": "<strong>Datos relativos al evento:</strong> Tipología de evento, municipio o localización física, fechas previstas y especificaciones operativas.",
+        "sec3-title": "3. Finalidad del Tratamiento",
+        "sec3-intro": "Tus datos son tratados exclusivamente con las siguientes finalidades legítimas:",
+        "sec3-li1": "Gestionar y contestar tu consulta técnica o petición de disponibilidad de agenda.",
+        "sec3-li2": "Elaborar y remitir presupuestos para la participación del food truck en ferias, festivales, bodas o eventos corporativos.",
+        "sec3-li3": "Mantener las comunicaciones necesarias para coordinar la logística del servicio contratado.",
+        "sec3-note": "En ningún caso comercializamos, cedemos a terceros con fines comerciales ni enviamos publicidad no solicitada (spam).",
+        "sec4-title": "4. Base Jurídica (Legitimación)",
+        "sec4-p1": "La base legal para el tratamiento de tus datos es tu <strong>consentimiento inequívoco</strong> (Art. 6.1.a del RGPD), manifestado al marcar la casilla de aceptación y enviar el formulario de contacto.",
+        "sec5-title": "5. Plazo de Conservación de los Datos",
+        "sec5-p1": "Los datos facilitados se conservarán durante el tiempo imprescindible para atender y resolver la solicitud. En caso de concretarse una relación contractual, se conservarán durante los plazos legalmente exigibles por la normativa fiscal y contable española (mínimo de 4 a 5 años).",
+        "sec6-title": "6. Destinatarios y Proveedores de Servicios",
+        "sec6-intro": "No se cederán datos a terceros salvo obligación legal. Para la operativa del sitio web, se emplean los siguientes encargados de tratamiento:",
+        "sec6-li1": "<strong>Procesamiento del Formulario:</strong> Formspree Inc., que procesa el envío seguro mediante cifrado HTTPS bajo cláusulas contractuales tipo RGPD.",
+        "sec6-li2": "<strong>Alojamiento Web:</strong> Servidores estáticos protegidos con cifrado SSL/TLS.",
+        "sec7-title": "7. Derechos del Usuario (ARCO-POL)",
+        "sec7-intro": "De conformidad con la normativa vigente, tienes derecho a:",
+        "sec7-li1": "<strong>Acceso:</strong> Solicitar confirmación de si tratamos tus datos personales.",
+        "sec7-li2": "<strong>Rectificación:</strong> Modificar los datos inexactos o incompletos.",
+        "sec7-li3": "<strong>Supresión:</strong> Solicitar la eliminación de tus datos cuando ya no sean pertinentes.",
+        "sec7-li4": "<strong>Oposición y Limitación:</strong> Solicitar la limitación de su tratamiento en determinadas circunstancias.",
+        "sec7-p2": "Puedes ejercer estos derechos remitiendo un correo electrónico a <strong>hola@somoszerodrama.com</strong> acreditando tu identidad. Asimismo, puedes acudir a la <a href='https://www.aepd.es' target='_blank' rel='noopener noreferrer' style='color: var(--zd-terracotta); text-decoration: underline;'>Agencia Española de Protección de Datos (AEPD)</a> si consideras que tus derechos han sido desatendidos.",
+        "sec8-title": "8. Política de Cookies",
+        "sec8-p1": "Este sitio web utiliza una arquitectura puramente estática. <strong>No emplea cookies de rastreo publicitario ni herramientas analíticas intrusivas de terceros.</strong> Se limita exclusivamente a cookies técnicas imprescindibles para la entrega segura y eficiente del contenido a través de la red.",
+        "footer-legal": "Aviso Legal",
+        "footer-privacy": "Política de Privacidad",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TODOS LOS DERECHOS RESERVADOS"
+      },
+      cat: {
+        "back-link": "← Tornar al web",
+        "priv-descriptor": "Protecció de Dades · RGPD &amp; LOPDGDD",
+        "priv-title": "Política de Privacitat",
+        "priv-intro": "A <strong>Zero Drama Food Truck</strong> ens prenem la protecció de les teves dades amb el mateix rigor que la seguretat alimentària dels nostres plats. Aquesta Política de Privacitat regula el tractament de les dades recollides a través de <strong>somoszerodrama.com</strong> de conformitat amb el <strong>Reglament (UE) 2016/679 (RGPD)</strong> i la <strong>Llei Orgànica 3/2018 (LOPDGDD)</strong>.",
+        "card-summary-title": "Resum Informatiu Bàsic",
+        "card-summary-p1": "<strong>Responsable:</strong> Zero Drama Food Truck (<em>[NOM O RAÓ SOCIAL]</em> · <em>[NIF/CIF]</em>).",
+        "card-summary-p2": "<strong>Finalitat:</strong> Atendre sol·licituds de contacte, pressupost i reserva de dates d'esdeveniments.",
+        "card-summary-p3": "<strong>Legitimació:</strong> El teu consentiment exprés en enviar el formulari o correu.",
+        "card-summary-p4": "<strong>Destinataris:</strong> Proveïdors tècnics indispensables (Formspree per a recepció de missatges i servidor d'allotjament web).",
+        "card-summary-p5": "<strong>Drets:</strong> Accés, rectificació, supressió i oposició escrivint a <a href='mailto:hola@somoszerodrama.com' style='color: var(--zd-terracotta); text-decoration: underline;'>hola@somoszerodrama.com</a>.",
+        "sec1-title": "1. Responsable del Tractament",
+        "th-identity": "Identitat",
+        "th-taxid": "NIF / CIF",
+        "th-address": "Direcció Postal",
+        "th-email": "Contacte Electrònic",
+        "sec2-title": "2. Dades Personals que Recopilem",
+        "sec2-intro": "Tractem exclusivament les dades que ens facilites voluntàriament a través del formulari de contractació o mitjançant correu electrònic:",
+        "sec2-li1": "<strong>Dades identificatives i de contacte:</strong> Nom i cognoms, organització o empresa convocant, i adreça de correu electrònic.",
+        "sec2-li2": "<strong>Dades de contacte opcionals:</strong> Telèfon mòbil i preferència de franja horària.",
+        "sec2-li3": "<strong>Dades relatives a l'esdeveniment:</strong> Tipologia d'esdeveniment, municipi o localització física, dates previstes i especificacions operatives.",
+        "sec3-title": "3. Finalitat del Tractament",
+        "sec3-intro": "Les teves dades són tractades exclusivament amb les següents finalitats legítimes:",
+        "sec3-li1": "Gestionar i respondre la teva consulta tècnica o petició de disponibilitat d'agenda.",
+        "sec3-li2": "Elaborar i remetre pressupostos per a la participació del food truck en fires, festivals, casaments o esdeveniments corporatius.",
+        "sec3-li3": "Mantenir les comunicacions necessàries per coordinar la logística del servei contractat.",
+        "sec3-note": "En cap cas comercialitzem, cedim a tercers amb finalitats comercials ni enviem publicitat no sol·licitada (spam).",
+        "sec4-title": "4. Base Jurídica (Legitimació)",
+        "sec4-p1": "La base legal per al tractament de les teves dades és el teu <strong>consentiment inequívoc</strong> (Art. 6.1.a del RGPD), manifestat en marcar la casella d'acceptació i enviar el formulari de contacte.",
+        "sec5-title": "5. Termini de Conservació de les Dades",
+        "sec5-p1": "Les dades facilitades es conservaran durant el temps imprescindible per atendre i resoldre la sol·licitud. En cas de concretar-se una relació contractual, es conservaran durant els terminis legalment exigibles per la normativa fiscal i comptable espanyola (mínim de 4 a 5 anys).",
+        "sec6-title": "6. Destinataris i Proveïdors de Serveis",
+        "sec6-intro": "No es cediran dades a tercers excepte obligació legal. Per a l'operativa del lloc web, s'empren els següents encarregats de tractament:",
+        "sec6-li1": "<strong>Processament del Formulari:</strong> Formspree Inc., que processa l'enviament segur mitjançant xifratge HTTPS sota clàusules contractuals tipus RGPD.",
+        "sec6-li2": "<strong>Allotjament Web:</strong> Servidors estàtics protegits amb xifratge SSL/TLS.",
+        "sec7-title": "7. Drets de l'Usuari (ARCO-POL)",
+        "sec7-intro": "De conformitat amb la normativa vigent, tens dret a:",
+        "sec7-li1": "<strong>Accés:</strong> Sol·licitar confirmació de si tractem les teves dades personals.",
+        "sec7-li2": "<strong>Rectificació:</strong> Modificar les dades inexactes o incompletes.",
+        "sec7-li3": "<strong>Supressió:</strong> Sol·licitar l'eliminació de les teves dades quan ja no siguin pertinents.",
+        "sec7-li4": "<strong>Oposició i Limitació:</strong> Sol·licitar la limitació del seu tractament en determinades circumstàncies.",
+        "sec7-p2": "Pots exercir aquests drets enviant un correu electrònic a <strong>hola@somoszerodrama.com</strong> acreditant la teva identitat. Així mateix, pots acudir a l'<a href='https://www.aepd.es' target='_blank' rel='noopener noreferrer' style='color: var(--zd-terracotta); text-decoration: underline;'>Agència Espanyola de Protecció de Dades (AEPD)</a> si consideres que els teus drets han estat desatesos.",
+        "sec8-title": "8. Política de Galetes (Cookies)",
+        "sec8-p1": "Aquest lloc web utilitza una arquitectura purament estàtica. <strong>No empra galetes de rastreig publicitari ni eines analítiques intrusives de tercers.</strong> Es limita exclusivament a galetes tècniques imprescindibles per al lliurament segur i eficient del contingut a través de la xarxa.",
+        "footer-legal": "Avís Legal",
+        "footer-privacy": "Política de Privacitat",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · TOTS ELS DRETS RESERVATS"
+      },
+      en: {
+        "back-link": "← Back to website",
+        "priv-descriptor": "Data Protection · GDPR &amp; Organic Law",
+        "priv-title": "Privacy Policy",
+        "priv-intro": "At <strong>Zero Drama Food Truck</strong>, we handle your personal data with the same rigorous care applied to the food safety of our dishes. This Privacy Policy governs the processing of personal data collected via <strong>somoszerodrama.com</strong> in compliance with <strong>EU Regulation 2016/679 (GDPR)</strong> and Spanish Organic Law 3/2018 (LOPDGDD).",
+        "card-summary-title": "Basic Summary",
+        "card-summary-p1": "<strong>Controller:</strong> Zero Drama Food Truck (<em>[NAME OR COMPANY]</em> · <em>[TAX ID]</em>).",
+        "card-summary-p2": "<strong>Purpose:</strong> Managing inquiries, budget quotes, and event scheduling requests.",
+        "card-summary-p3": "<strong>Legal Basis:</strong> Your explicit consent upon submitting the contact form or sending an email.",
+        "card-summary-p4": "<strong>Recipients:</strong> Essential technical infrastructure providers (Formspree for form handling and static web hosting).",
+        "card-summary-p5": "<strong>Rights:</strong> Access, rectification, erasure, and objection via <a href='mailto:hola@somoszerodrama.com' style='color: var(--zd-terracotta); text-decoration: underline;'>hola@somoszerodrama.com</a>.",
+        "sec1-title": "1. Data Controller",
+        "th-identity": "Identity",
+        "th-taxid": "Tax ID / VAT",
+        "th-address": "Registered Address",
+        "th-email": "Email Contact",
+        "sec2-title": "2. Personal Data We Collect",
+        "sec2-intro": "We exclusively collect and process data you voluntarily provide through our booking form or direct email communications:",
+        "sec2-li1": "<strong>Identification & contact details:</strong> Full name, organization/company, and email address.",
+        "sec2-li2": "<strong>Optional contact data:</strong> Phone number and preferred contact time slot.",
+        "sec2-li3": "<strong>Event details:</strong> Type of event, planned dates, venue location, and technical requirements.",
+        "sec3-title": "3. Purpose of Processing",
+        "sec3-intro": "Your personal data is processed solely for the following legitimate purposes:",
+        "sec3-li1": "Answering your inquiries and checking food truck availability.",
+        "sec3-li2": "Drafting commercial proposals for festivals, fairs, weddings, and corporate gatherings.",
+        "sec3-li3": "Handling operational communications to coordinate on-site logistics.",
+        "sec3-note": "We never sell, rent, or transfer your personal information to third parties for marketing purposes, nor do we send unsolicited emails (spam).",
+        "sec4-title": "4. Legal Basis (Lawfulness)",
+        "sec4-p1": "The legal ground for processing your personal data is your <strong>explicit consent</strong> (Art. 6.1.a GDPR), granted when checking the acceptance box and submitting our contact form.",
+        "sec5-title": "5. Data Retention Period",
+        "sec5-p1": "Personal details are kept only for the duration necessary to address and resolve your request. If a formal business agreement is reached, records will be retained in accordance with statutory tax and accounting retention laws (typically 4 to 5 years).",
+        "sec6-title": "6. Data Processors & Recipients",
+        "sec6-intro": "Data will not be disclosed to third parties unless required by law. For site operations, the following data processors are engaged:",
+        "sec6-li1": "<strong>Form Processing:</strong> Formspree Inc., providing secure encrypted transmission over HTTPS compliant with GDPR standard contractual clauses.",
+        "sec6-li2": "<strong>Web Hosting:</strong> Static hosting servers secured with SSL/TLS encryption.",
+        "sec7-title": "7. User Rights (GDPR)",
+        "sec7-intro": "Under applicable privacy legislation, you have the right to:",
+        "sec7-li1": "<strong>Access:</strong> Confirm whether we process your personal data.",
+        "sec7-li2": "<strong>Rectification:</strong> Correct inaccurate or incomplete records.",
+        "sec7-li3": "<strong>Erasure:</strong> Request deletion of your personal data when no longer required.",
+        "sec7-li4": "<strong>Objection & Restriction:</strong> Restrict or object to specific processing operations.",
+        "sec7-p2": "You may exercise these rights at any time by emailing <strong>hola@somoszerodrama.com</strong> with proof of identity. You also retain the right to lodge a complaint with the <a href='https://www.aepd.es' target='_blank' rel='noopener noreferrer' style='color: var(--zd-terracotta); text-decoration: underline;'>Spanish Data Protection Agency (AEPD)</a>.",
+        "sec8-title": "8. Cookie Policy",
+        "sec8-p1": "This website operates on a lightweight static architecture. <strong>It does not use third-party tracking cookies or invasive analytics tools.</strong> It only uses technical cookies strictly necessary for delivering content securely over the network.",
+        "footer-legal": "Legal Notice",
+        "footer-privacy": "Privacy Policy",
+        "footer-text": "© 2026 ZERO DRAMA FOOD TRUCK · SOMOSZERODRAMA.COM · ALL RIGHTS RESERVED"
+      }
+    };
+
+    function setLanguage(lang) {
+      if (!translations[lang]) lang = 'en';
+      document.documentElement.lang = lang === 'cat' ? 'ca' : lang;
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('zd_lang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('zd_lang');
+      if (savedLang && translations[savedLang]) {
+        setLanguage(savedLang);
+        return;
+      }
+
+      const userLangs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+      let detected = 'en';
+
+      for (const l of userLangs) {
+        const primary = l.toLowerCase().split('-')[0];
+        if (primary === 'ca') {
+          detected = 'cat';
+          break;
+        } else if (primary === 'es') {
+          detected = 'es';
+          break;
+        }
+      }
+
+      setLanguage(detected);
+    });
+  </script>
+
+</body>
+</html>
